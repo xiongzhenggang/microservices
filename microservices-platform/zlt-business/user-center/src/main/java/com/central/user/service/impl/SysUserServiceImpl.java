@@ -32,7 +32,7 @@ import lombok.extern.slf4j.Slf4j;
 import javax.annotation.Resource;
 
 /**
- * @author 作者 owen E-mail: 624191343@qq.com
+ * @author
  */
 @Slf4j
 @Service
@@ -83,7 +83,7 @@ public class SysUserServiceImpl extends SuperServiceImpl<SysUserMapper, SysUser>
                 Set<Long> roleIds = sysRoles.parallelStream().map(SuperEntity::getId).collect(Collectors.toSet());
                 List<SysMenu> menus = roleMenuMapper.findMenusByRoleIds(roleIds, CommonConstant.PERMISSION);
                 if (!CollectionUtils.isEmpty(menus)) {
-                    Set<String> permissions = menus.parallelStream().map(p -> p.getPath())
+                    Set<String> permissions = menus.parallelStream().map(p -> p.getUrl())
                             .collect(Collectors.toSet());
                     // 设置权限集合
                     loginAppUser.setPermissions(permissions);

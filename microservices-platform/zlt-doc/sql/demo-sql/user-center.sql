@@ -88,6 +88,7 @@ CREATE TABLE `sys_role` (
   `update_user` varchar(255) DEFAULT NULL,
   `type` varchar(16) NOT NULL,
   `tenant_id` varchar(32) DEFAULT '' COMMENT '租户字段',
+  `delete_flag` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `idx_code` (`code`),
   KEY `idx_type` (`type`),

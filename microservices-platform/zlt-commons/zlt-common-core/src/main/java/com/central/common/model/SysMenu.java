@@ -19,16 +19,19 @@ public class SysMenu extends SuperEntity {
 
 	private Long parentId;
 	private String name;
-	private String css;
+	private String menuRoute;
 	private String url;
-	private String path;
+	private String icon;
 	private Integer sort;
-	private Integer type;
-	private Boolean hidden;
+	private String type;
+	private String describe;
+	private String createUser;
+	private String updateUser;
+	private String tenantId;
 	/**
 	 * 请求的类型
 	 */
-	private String pathMethod;
+	private String method;
 
 	@TableField(exist = false)
 	private List<SysMenu> subMenus;

@@ -1,6 +1,5 @@
 package com.central.common.model;
 
-import java.util.Date;
 import java.util.List;
 
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -33,11 +32,7 @@ public class SysUser extends SuperEntity {
 	private String type;
 	private String createUser;
 	private String updateUser;
-	private Date createTime;
-	private Date updateTime;
 	private String openId;
-	@TableLogic
-	private boolean deleteFlag;
 
 	@TableField(exist = false)
 	private List<SysRole> roles;

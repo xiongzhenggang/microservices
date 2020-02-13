@@ -84,8 +84,8 @@ public abstract class DefaultPermissionServiceImpl {
             List<SysMenu> menuList = findMenuByRoleCodes(roleCodes);
             for (SysMenu menu : menuList) {
                 if (StringUtils.isNotEmpty(menu.getUrl()) && antPathMatcher.match(menu.getUrl(), requestURI)) {
-                    if (StrUtil.isNotEmpty(menu.getPathMethod())) {
-                        return requestMethod.equalsIgnoreCase(menu.getPathMethod());
+                    if (StrUtil.isNotEmpty(menu.getMethod())) {
+                        return requestMethod.equalsIgnoreCase(menu.getMethod());
                     } else {
                         return true;
                     }

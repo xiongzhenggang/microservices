@@ -6,9 +6,13 @@
 			id,
 			code,
 			name,
+			create_user,
+			update_user,
+			type,
 			create_time,
 			update_time,
-			tenant_id
+			tenant_id,
+			delete_flag
 	</sql>
 
 	<sql id="where">
