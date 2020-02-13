@@ -17,7 +17,7 @@ import com.central.common.model.SysMenu;
  */
 @Mapper
 public interface SysRoleMenuMapper extends SuperMapper<SysRoleMenu> {
-	@Insert("insert into sys_role_menu(role_id, menu_id) values(#{roleId}, #{menuId})")
+	@Insert("insert into sys_role_menu_rel(role_id, menu_id) values(#{roleId}, #{menuId})")
 	int save(@Param("roleId") Long roleId, @Param("menuId") Long menuId);
 
 	int delete(@Param("roleId") Long roleId, @Param("menuId") Long menuId);

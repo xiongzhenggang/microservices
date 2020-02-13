@@ -6,6 +6,7 @@ import com.central.oauth.service.IValidateCodeService;
 import com.wf.captcha.base.Captcha;
 import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.utils.CaptchaUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
@@ -21,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  * @date 2018/12/18
  */
 @Controller
+@Slf4j
 public class ValidateCodeController {
     @Autowired
     private IValidateCodeService validateCodeService;
@@ -40,7 +42,9 @@ public class ValidateCodeController {
         // 设置类型：字母数字混合
         gifCaptcha.setCharType(Captcha.TYPE_DEFAULT);
         // 保存验证码
-        validateCodeService.saveImageCode(deviceId, gifCaptcha.text().toLowerCase());
+        String imageId =  gifCaptcha.text().toLowerCase();
+        log.info("设备ID:{} 验证码ID：{}",deviceId,imageId);
+        validateCodeService.saveImageCode(deviceId, imageId);
         // 输出图片流
         gifCaptcha.out(response.getOutputStream());
     }

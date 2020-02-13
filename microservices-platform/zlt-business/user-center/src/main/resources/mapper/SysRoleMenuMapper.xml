@@ -17,7 +17,7 @@
 
 	<select id="findMenusByRoleIds" resultType="com.central.common.model.SysMenu">
 		select distinct t.* from sys_menu t
-		inner join sys_role_menu r on r.menu_id = t.id
+		inner join sys_role_menu_rel r on r.menu_id = t.id
 		where
 		r.role_id in
 		<foreach collection="roleIds" index="index" item="roleId"
@@ -32,7 +32,7 @@
 
     <select id="findMenusByRoleCodes" resultType="com.central.common.model.SysMenu">
 		select distinct t.* from sys_menu t
-		inner join sys_role_menu r on r.menu_id = t.id
+		inner join sys_role_menu_rel r on r.menu_id = t.id
 		inner join sys_role rl on rl.id = r.role_id
 		where
 		rl.code in

@@ -102,7 +102,7 @@ public class SysUserServiceImpl extends SuperServiceImpl<SysUserMapper, SysUser>
     @Override
     public SysUser selectByUsername(String username) {
         List<SysUser> users = baseMapper.selectList(
-                new QueryWrapper<SysUser>().eq("username", username)
+                new QueryWrapper<SysUser>().eq("user_name", username)
         );
         return getUser(users);
     }

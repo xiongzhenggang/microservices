@@ -10,8 +10,6 @@
 
 
 
-
-
 ##  模块说明
 
 ```lua
@@ -45,3 +43,32 @@ central-platform -- 父项目，公共依赖
 ```
 
 &nbsp;
+
+### 权限
+*1  验证码获取接口
+9900 为getway 网关入口
+GET
+> http://localhost:9900/api-uaa/validata/code/admin
+*2  通过用户名验证码获取token
+```
+deviceId 为登录设备名称（可以是人名或者设备名称）
+validCode 为获取的验证码
+```
+POST
+>http://localhost:9900/api-uaa/oauth/user/token?deviceId=admin&validCode=yrmu&username=admin&password=admin
+>头 Authorization: Basic d2ViQXBwOndlYkFwcA==
+
+response:
+```
+{
+  "datas": {
+    "access_token": "83a96f84-5fc5-4019-8314-daa83cba472b",
+    "token_type": "bearer",
+    "refresh_token": "916dd4e9-2771-4e72-a410-db2d843c71be",
+    "expires_in": 3599,
+    "scope": "app"
+  },
+  "resp_code": 0,
+  "resp_msg": ""
+}
+```

@@ -19,7 +19,7 @@ import com.central.common.model.SysRole;
 public interface SysUserRoleMapper extends SuperMapper<SysRoleUser> {
     int deleteUserRole(@Param("userId") Long userId, @Param("roleId") Long roleId);
 
-    @Insert("insert into sys_role_user(user_id, role_id) values(#{userId}, #{roleId})")
+    @Insert("insert into sys_user_role_rel(user_id, role_id) values(#{userId}, #{roleId})")
     int saveUserRoles(@Param("userId") Long userId, @Param("roleId") Long roleId);
 
     /**
@@ -36,7 +36,7 @@ public interface SysUserRoleMapper extends SuperMapper<SysRoleUser> {
      * @param userIds
      * @return
      */
-    @Select("<script>select r.*,ru.user_id from sys_role_user ru inner join sys_role r on r.id = ru.role_id where ru.user_id IN " +
+    @Select("<script>select r.*,ru.user_id from sys_user_role_rel ru inner join sys_role r on r.id = ru.role_id where ru.user_id IN " +
             " <foreach item='item' index='index' collection='list' open='(' separator=',' close=')'> " +
             " #{item} " +
             " </foreach>" +

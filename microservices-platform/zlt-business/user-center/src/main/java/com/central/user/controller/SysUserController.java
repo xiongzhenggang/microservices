@@ -49,7 +49,7 @@ public class SysUserController {
     /**
      * 全文搜索逻辑删除Dto
      */
-    private static final LogicDelDto SEARCH_LOGIC_DEL_DTO = new LogicDelDto("isDel", "否");
+    private static final LogicDelDto SEARCH_LOGIC_DEL_DTO = new LogicDelDto("deleteFlag", "否");
 
     @Autowired
     private ISysUserService appUserService;
