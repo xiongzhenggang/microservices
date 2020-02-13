@@ -10,7 +10,7 @@ import com.central.common.model.SysRole;
 import org.apache.ibatis.annotations.Param;
 
 /**
-* @author zlt
+* @autho
  * 角色
  */
 public interface SysRoleMapper extends SuperMapper<SysRole> {

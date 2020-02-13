@@ -8,7 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * @author zlt
+ * @autho
  * @date 2019/5/1
  */
 @EnableDiscoveryClient

@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * Token转化SysUser
  *
- * @author zlt
+ * @author
  * @date 2018/12/21
  */
 @Slf4j
@@ -71,7 +71,7 @@ public class TokenArgumentResolver implements HandlerMethodArgumentResolver {
         } else {
             user = new SysUser();
             user.setId(Long.valueOf(userId));
-            user.setUsername(username);
+            user.setUserName(username);
         }
         List<SysRole> sysRoleList = new ArrayList<>();
         Arrays.stream(roles.split(",")).forEach(role -> {

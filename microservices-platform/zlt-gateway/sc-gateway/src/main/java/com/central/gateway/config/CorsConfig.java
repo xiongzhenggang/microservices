@@ -10,7 +10,7 @@ import org.springframework.web.util.pattern.PathPatternParser;
 /**
  * 跨域配置
  *
- * @author zlt
+ * @author
  * @date 2019/10/5
  * <p>
  * Blog: https://blog.csdn.net/zlt2000

@@ -17,7 +17,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import javax.annotation.Resource;
 
 /**
- * @author zlt
+ * @autho
  */
 @Import(DefaultSecurityHandlerConfig.class)
 public class DefaultResourceServerConf extends ResourceServerConfigurerAdapter {

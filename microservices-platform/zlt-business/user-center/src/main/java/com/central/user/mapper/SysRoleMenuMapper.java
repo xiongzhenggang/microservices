@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Param;
 import com.central.common.model.SysMenu;
 
 /**
- * @author zlt
+ * @autho
  * 角色菜单
  */
 @Mapper

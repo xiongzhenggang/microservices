@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 /**
  * 认证成功处理类
  *
- * @author zlt
+ * @author
  * @date 2019/10/7
  * <p>
  * Blog: https://blog.csdn.net/zlt2000
@@ -31,7 +31,7 @@ public class Oauth2AuthSuccessHandler implements ServerAuthenticationSuccessHand
         if (principal instanceof SysUser) {
             SysUser user = (SysUser)authentication.getPrincipal();
             headerValues.add(SecurityConstants.USER_ID_HEADER, String.valueOf(user.getId()));
-            headerValues.add(SecurityConstants.USER_HEADER, user.getUsername());
+            headerValues.add(SecurityConstants.USER_HEADER, user.getUserName());
         }
         OAuth2Authentication oauth2Authentication = (OAuth2Authentication)authentication;
         String clientId = oauth2Authentication.getOAuth2Request().getClientId();

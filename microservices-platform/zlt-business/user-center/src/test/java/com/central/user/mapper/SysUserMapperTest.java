@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * SysUserMapperTest单元测试用例
  *
- * @author zlt
+ * @autho
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

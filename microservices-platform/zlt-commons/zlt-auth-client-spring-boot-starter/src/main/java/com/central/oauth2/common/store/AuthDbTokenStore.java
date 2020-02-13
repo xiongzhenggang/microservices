@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 /**
  * 认证服务器使用数据库存取令牌
  *
- * @author zlt
+ * @autho
  * @date 2018/7/24 16:23
  */
 public class AuthDbTokenStore {

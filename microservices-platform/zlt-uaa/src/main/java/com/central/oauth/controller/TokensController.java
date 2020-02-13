@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * token管理接口
  *
- * @author zlt
+ * @autho
  */
 @Api(tags = "Token管理")
 @RestController

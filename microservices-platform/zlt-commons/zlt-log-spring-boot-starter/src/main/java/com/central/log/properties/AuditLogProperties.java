@@ -8,7 +8,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 /**
  * 审计日志配置
  *
- * @author zlt
+ * @autho
  * @date 2020/2/3
  * <p>
  * Blog: https://blog.csdn.net/zlt2000

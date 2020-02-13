@@ -33,7 +33,7 @@ import java.io.IOException;
 /**
  * OAuth2相关操作
  *
- * @author zlt
+ * @autho
  */
 @Api(tags = "OAuth2相关操作")
 @Slf4j

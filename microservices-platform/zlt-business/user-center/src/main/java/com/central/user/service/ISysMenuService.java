@@ -7,7 +7,7 @@ import com.central.common.model.SysMenu;
 import com.central.common.service.ISuperService;
 
 /**
- * @author zlt
+ * @autho
  */
 public interface ISysMenuService extends ISuperService<SysMenu> {
 	/**

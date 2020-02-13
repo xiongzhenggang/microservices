@@ -7,7 +7,7 @@ import org.springframework.security.oauth2.provider.code.RandomValueAuthorizatio
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author zlt
+ * @autho
  * JdbcAuthorizationCodeServices替换
  */
 public class RedisAuthorizationCodeServices extends RandomValueAuthorizationCodeServices {

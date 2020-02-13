@@ -3,7 +3,7 @@ package com.central.common.constant;
 /**
  * 全局公共常量
  *
- * @author zlt
+ * @author
  * @date 2018/10/29
  */
 public interface CommonConstant {

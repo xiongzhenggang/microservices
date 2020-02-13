@@ -16,7 +16,7 @@ import java.util.Enumeration;
 /**
  * 认证授权相关工具类
  *
- * @author zlt
+ * @autho
  * @date 2018/5/13
  */
 @Slf4j
@@ -98,7 +98,7 @@ public class AuthUtils {
         Object principal = authentication.getPrincipal();
         String username = null;
         if (principal instanceof SysUser) {
-            username = ((SysUser) principal).getUsername();
+            username = ((SysUser) principal).getUserName();
         } else if (principal instanceof String) {
             username = (String) principal;
         }

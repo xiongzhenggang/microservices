@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Param;
 import com.central.oauth.model.Client;
 
 /**
- * @author zlt
+ * @autho
  */
 public interface ClientMapper extends SuperMapper<Client> {
     List<Client> findList(Page<Client> page, @Param("params") Map<String, Object> params );

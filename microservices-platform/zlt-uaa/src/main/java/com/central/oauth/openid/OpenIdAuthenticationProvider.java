@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.social.security.SocialUserDetailsService;
 
 /**
- * @author zlt
+ * @autho
  */
 public class OpenIdAuthenticationProvider implements AuthenticationProvider {
 

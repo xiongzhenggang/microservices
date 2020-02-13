@@ -4,7 +4,7 @@ import com.central.common.exception.DefaultExceptionAdvice;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 /**
- * @author zlt
+ * @autho
  */
 @ControllerAdvice
 public class ExceptionAdvice extends DefaultExceptionAdvice {

@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Select;
 import com.central.common.model.SysRole;
 
 /**
- * @author zlt
+ * @autho
  * 用户角色关系
  */
 @Mapper

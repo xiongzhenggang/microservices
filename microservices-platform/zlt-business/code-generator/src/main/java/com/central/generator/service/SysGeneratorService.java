@@ -8,7 +8,7 @@ import com.central.common.model.PageResult;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author zlt
+ * @Author
  */
 @Service
 public interface SysGeneratorService extends IService {

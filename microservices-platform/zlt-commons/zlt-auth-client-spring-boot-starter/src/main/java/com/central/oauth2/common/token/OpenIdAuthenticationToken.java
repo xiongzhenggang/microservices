@@ -7,7 +7,7 @@ import org.springframework.security.core.SpringSecurityCoreVersion;
 import java.util.Collection;
 
 /**
- * @author zlt
+ * @autho
  */
 public class OpenIdAuthenticationToken extends AbstractAuthenticationToken {
 

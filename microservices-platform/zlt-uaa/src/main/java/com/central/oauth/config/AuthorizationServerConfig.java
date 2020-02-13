@@ -24,7 +24,7 @@ import java.util.Arrays;
 /**
  * OAuth2 授权服务器配置
  *
- * @author zlt
+ * @autho
  * @date 2018/10/24
  */
 @Configuration

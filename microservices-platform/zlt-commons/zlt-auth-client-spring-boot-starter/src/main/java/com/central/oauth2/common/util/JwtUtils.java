@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 /**
  * jwt工具类
  *
- * @author zlt
+ * @autho
  * @date 2019/7/21
  */
 public class JwtUtils {

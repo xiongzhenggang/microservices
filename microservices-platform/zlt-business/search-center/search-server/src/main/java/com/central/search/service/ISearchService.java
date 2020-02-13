@@ -5,7 +5,7 @@ import com.central.common.model.PageResult;
 import com.central.search.model.SearchDto;
 
 /**
- * @author zlt
+ * @autho
  * @date 2019/4/24
  */
 public interface ISearchService {

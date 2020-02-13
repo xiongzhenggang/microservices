@@ -2,7 +2,7 @@ package com.central.common.model;
 
 
 /**
- * @author zlt
+ * @autho
  * 用户类型
  */
 public enum UserType {

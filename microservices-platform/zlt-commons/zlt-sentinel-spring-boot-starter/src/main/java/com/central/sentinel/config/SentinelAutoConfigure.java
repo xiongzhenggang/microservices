@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Sentinel配置类
  *
- * @author zlt
+ * @author
  * @date 2019/1/22
  */
 public class SentinelAutoConfigure {

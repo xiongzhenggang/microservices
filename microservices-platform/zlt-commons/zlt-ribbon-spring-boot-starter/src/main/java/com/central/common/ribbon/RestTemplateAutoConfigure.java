@@ -20,7 +20,7 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author zlt
+ * @autho
  * @date 2018/11/17
  */
 @EnableConfigurationProperties(RestTemplateProperties.class)

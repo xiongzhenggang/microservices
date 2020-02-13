@@ -227,9 +227,9 @@ public class SysUserServiceImpl extends SuperServiceImpl<SysUserMapper, SysUser>
             sysUser.setPassword(passwordEncoder.encode(CommonConstant.DEF_USER_PASSWORD));
             sysUser.setEnabled(Boolean.TRUE);
         }
-        String username = sysUser.getUsername();
+        String username = sysUser.getUserName();
         boolean result = super.saveOrUpdateIdempotency(sysUser, lock
-                , LOCK_KEY_USERNAME+username, new QueryWrapper<SysUser>().eq("username", username)
+                , LOCK_KEY_USERNAME+username, new QueryWrapper<SysUser>().eq("user_name", username)
                 , username+"已存在");
         //更新角色
         if (result && StrUtil.isNotEmpty(sysUser.getRoleId())) {

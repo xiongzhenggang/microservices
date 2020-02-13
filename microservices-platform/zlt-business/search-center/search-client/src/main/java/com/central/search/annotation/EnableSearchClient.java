@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 /**
  * 控制是否加载搜索中心客户端的Service
  *
- * @author zlt
+ * @autho
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

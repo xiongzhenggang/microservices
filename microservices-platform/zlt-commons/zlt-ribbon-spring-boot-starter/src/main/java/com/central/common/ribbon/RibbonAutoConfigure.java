@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 /**
  * Ribbon扩展配置类
  *
- * @author zlt
+ * @autho
  * @date 2018/11/17 9:24
  */
 @EnableConfigurationProperties(RestTemplateProperties.class)

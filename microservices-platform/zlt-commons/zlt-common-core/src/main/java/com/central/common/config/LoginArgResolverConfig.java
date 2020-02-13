@@ -13,8 +13,7 @@ import java.util.List;
 /**
  * 公共配置类, 一些公共工具配置
  *
- * @author zlt
- * @date 2018/8/25
+ * @author
  */
 public class LoginArgResolverConfig implements WebMvcConfigurer {
     @Lazy

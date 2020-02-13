@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * swagger2 属性配置
  *
- * @author zlt
+ * @autho
  * @date 2018/11/18 9:17
  */
 @Data

@@ -7,7 +7,7 @@ package com.central.common.utils;
  * 2. 如果时间差(offset)小于等于5ms，着等待 offset * 2 的时间再生成
  * 3. 如果offset大于5，则直接抛出异常
  *
- * @author zlt
+ * @autho
  * @date 2019/3/5
  */
 public class IdGenerator {

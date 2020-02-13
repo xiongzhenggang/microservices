@@ -3,7 +3,7 @@ package com.central.common.redis.constant;
 /**
  * redis 工具常量
  *
- * @author zlt
+ * @autho
  * @date 2018/5/21 11:59
  */
 public class RedisToolsConstant {

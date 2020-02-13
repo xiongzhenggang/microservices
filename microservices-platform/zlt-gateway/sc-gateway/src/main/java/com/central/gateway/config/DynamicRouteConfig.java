@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 动态路由配置
  *
- * @author zlt
+ * @author
  * @date 2019/10/7
  * <p>
  * Blog: https://blog.csdn.net/zlt2000

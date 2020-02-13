@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * head中的应用参数注入clientId中
  *
- * @author zlt
+ * @author
  * @date 2019/7/10
  */
 @Slf4j

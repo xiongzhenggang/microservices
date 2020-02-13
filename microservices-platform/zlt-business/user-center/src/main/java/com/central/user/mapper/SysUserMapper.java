@@ -8,11 +8,10 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
 
+
 /**
- * 用户表 Mapper 接口
- *
- * @author zlt
- * @data 2018-10-29
+ * @author xzg
+ * @date 2020-02-13 09:59:33
  */
 public interface SysUserMapper extends SuperMapper<SysUser> {
     /**

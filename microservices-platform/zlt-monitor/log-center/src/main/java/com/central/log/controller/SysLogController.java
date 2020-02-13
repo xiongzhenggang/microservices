@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 系统日志
  *
- * @author zlt
+ * @autho
  */
 @RestController
 public class SysLogController {

@@ -4,7 +4,7 @@ import com.central.oauth2.common.properties.SecurityProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
- * @author zlt
+ * @autho
  * @date 2019/10/7
  * <p>
  * Blog: https://blog.csdn.net/zlt2000

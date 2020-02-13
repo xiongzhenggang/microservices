@@ -3,7 +3,7 @@ package com.central.common.constant;
 /**
  * Security 权限常量
  *
- * @author zlt
+ * @author
  */
 public interface SecurityConstants {
     /**

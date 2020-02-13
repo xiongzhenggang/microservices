@@ -15,7 +15,7 @@ import static org.springframework.cloud.netflix.ribbon.SpringClientFactory.NAMES
  * 使其能够支持 配置全局的ribbon.NFLoadBalancerRuleClassName=package.YourRule
  * 然后各个微服务还可以根据自身情况做个性化定制。如:SERVICE_ID.ribbon.NFLoadBalancerRuleClassName=package.YourRule
  *
- * @author zlt
+ * @autho
  * @date 2018/11/17 9:29
  */
 public class DefaultPropertiesFactory extends PropertiesFactory {

@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * feign拦截器，只包含http相关数据
  *
- * @author zlt
+ * @autho
  * @date 2019/10/26
  * <p>
  * Blog: https://blog.csdn.net/zlt2000

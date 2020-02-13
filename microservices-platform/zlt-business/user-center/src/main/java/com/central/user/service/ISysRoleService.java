@@ -9,7 +9,7 @@ import com.central.common.model.SysRole;
 import com.central.common.service.ISuperService;
 
 /**
-* @author zlt
+* @author
  */
 public interface ISysRoleService extends ISuperService<SysRole> {
 	void saveRole(SysRole sysRole);

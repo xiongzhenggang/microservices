@@ -15,7 +15,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author zlt
+ * @autho
  * 用户实体绑定spring security
  */
 @Getter
@@ -36,6 +36,11 @@ public class LoginAppUser extends SysUser implements SocialUserDetails {
             super.getRoles().parallelStream().forEach(role -> collection.add(new SimpleGrantedAuthority(role.getCode())));
         }
         return collection;
+    }
+
+    @Override
+    public String getUsername() {
+        return super.getUserName();
     }
 
     @Override

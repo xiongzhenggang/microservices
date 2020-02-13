@@ -7,7 +7,7 @@ import lombok.Setter;
 /**
  * 逻辑删除条件对象
  *
- * @author zlt
+ * @autho
  * @date 2019/4/25
  */
 @Setter

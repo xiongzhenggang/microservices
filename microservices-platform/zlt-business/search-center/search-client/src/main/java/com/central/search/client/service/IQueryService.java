@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 搜索客户端接口
  *
- * @author zlt
+ * @autho
  * @date 2019/4/24
  */
 public interface IQueryService {

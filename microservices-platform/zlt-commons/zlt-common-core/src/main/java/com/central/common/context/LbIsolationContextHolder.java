@@ -5,7 +5,7 @@ import com.alibaba.ttl.TransmittableThreadLocal;
 /**
  * 负载均衡策略Holder
  *
- * @author zlt
+ * @autho
  * @date 2019/9/2
  */
 public class LbIsolationContextHolder {

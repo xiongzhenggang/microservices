@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 /**
  * 自定义隔离随机规则
  *
- * @author zlt
+ * @autho
  * @date 2019/9/3
  */
 public class CustomIsolationRule extends RoundRobinRule {

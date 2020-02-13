@@ -20,7 +20,7 @@ import java.util.Map;
 /**
  * 认证服务器使用 JWT RSA 非对称加密令牌
  *
- * @author zlt
+ * @autho
  * @date 2018/7/24 16:21
  */
 public class AuthJwtTokenStore {

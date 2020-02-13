@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * openId的相关处理配置
  *
- * @author zlt
+ * @autho
  */
 @Component
 public class OpenIdAuthenticationSecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {

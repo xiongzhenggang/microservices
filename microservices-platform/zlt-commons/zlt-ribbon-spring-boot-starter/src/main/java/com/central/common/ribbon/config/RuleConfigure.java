@@ -5,7 +5,7 @@ import com.netflix.loadbalancer.IRule;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author zlt
+ * @autho
  * @date 2019/9/3
  */
 public class RuleConfigure {

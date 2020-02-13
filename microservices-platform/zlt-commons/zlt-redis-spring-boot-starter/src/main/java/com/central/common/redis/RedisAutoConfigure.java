@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * redis 配置类
  *
- * @author zlt
+ * @autho
  * @date 2018/11/6 11:02
  */
 @EnableConfigurationProperties({RedisProperties.class, CacheManagerProperties.class})

@@ -7,8 +7,7 @@ import springfox.documentation.swagger2.configuration.Swagger2DocumentationConfi
 
 /**
  *
- * @author zlt
- * @date 2018/11/18 9:20
+ * @author
  */
 @Configuration
 @ConditionalOnProperty(name = "zlt.swagger.enabled", matchIfMissing = true)

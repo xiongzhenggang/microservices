@@ -7,7 +7,7 @@ import com.central.user.model.SysRoleUser;
 import java.util.List;
 
 /**
- * @author zlt
+ * @autho
  */
 public interface ISysRoleUserService extends ISuperService<SysRoleUser> {
 	int deleteUserRole(Long userId, Long roleId);

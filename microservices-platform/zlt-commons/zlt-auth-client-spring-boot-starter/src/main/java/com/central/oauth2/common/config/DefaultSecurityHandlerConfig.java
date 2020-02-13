@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author zlt
+ * @autho
  */
 public class DefaultSecurityHandlerConfig {
     @Resource

@@ -4,7 +4,7 @@ import com.central.common.config.DefaultPasswordConfig;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author zlt
+ * @autho
  * @date 2019/1/2
  */
 @Configuration

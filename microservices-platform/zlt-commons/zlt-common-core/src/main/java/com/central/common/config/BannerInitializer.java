@@ -13,7 +13,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 /**
  * Banner初始化
  *
- * @author zlt
+ * @autho
  * @date 2019/8/28
  */
 public class BannerInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
