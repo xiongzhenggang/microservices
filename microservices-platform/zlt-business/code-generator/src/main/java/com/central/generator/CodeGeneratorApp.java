@@ -9,7 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-public class CodeGeneratorApp {
+public class CodeGeneratorApp  {
     public static void main(String[] args) {
         SpringApplication.run(CodeGeneratorApp.class, args);
     }
