@@ -28,8 +28,6 @@ import java.time.LocalDateTime;
  * @author
  * @date 2020/2/3
  * <p>
- * Blog: https://blog.csdn.net/zlt2000
- * Github: https://github.com/zlt2000
  */
 @Slf4j
 @Aspect

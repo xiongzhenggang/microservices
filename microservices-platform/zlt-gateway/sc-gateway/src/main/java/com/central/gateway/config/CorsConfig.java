@@ -13,8 +13,6 @@ import org.springframework.web.util.pattern.PathPatternParser;
  * @author
  * @date 2019/10/5
  * <p>
- * Blog: https://blog.csdn.net/zlt2000
- * Github: https://github.com/zlt2000
  */
 @Configuration
 public class CorsConfig {

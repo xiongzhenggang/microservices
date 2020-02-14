@@ -14,8 +14,6 @@ import org.springframework.context.annotation.Configuration;
  * @author
  * @date 2019/10/7
  * <p>
- * Blog: https://blog.csdn.net/zlt2000
- * Github: https://github.com/zlt2000
  */
 @Configuration
 @ConditionalOnProperty(prefix = "zlt.gateway.dynamicRoute", name = "enabled", havingValue = "true")

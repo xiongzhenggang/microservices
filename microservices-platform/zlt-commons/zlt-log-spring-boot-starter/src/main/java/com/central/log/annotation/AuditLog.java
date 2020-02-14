@@ -6,8 +6,6 @@ import java.lang.annotation.*;
  * @autho
  * @date 2020/2/3
  * <p>
- * Blog: https://blog.csdn.net/zlt2000
- * Github: https://github.com/zlt2000
  */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

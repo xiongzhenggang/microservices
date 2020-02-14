@@ -13,8 +13,6 @@ import reactor.core.publisher.Mono;
  * @author
  * @date 2019/10/6
  * <p>
- * Blog: https://blog.csdn.net/zlt2000
- * Github: https://github.com/zlt2000
  */
 public class CustomAuthenticationManager implements ReactiveAuthenticationManager {
     private TokenStore tokenStore;
