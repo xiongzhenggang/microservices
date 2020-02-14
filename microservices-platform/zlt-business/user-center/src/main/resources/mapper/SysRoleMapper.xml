@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.central.user.mapper.SysRoleMapper">
+<mapper namespace="com.cmiov.user.mapper.SysRoleMapper">
 	<sql id="Column_List">
 			id,
 			code,
@@ -27,14 +27,14 @@
 		</where>
 	</sql>
 
-	<select id="findList" resultType="com.central.common.model.SysRole">
+	<select id="findList" resultType="com.cmiov.common.model.SysRole">
 		select <include refid="Column_List"/>
 		from sys_role t
 		<include refid="where" />
 		order by t.create_time desc
 	</select>
 
-	<select id="findAll" resultType="com.central.common.model.SysRole">
+	<select id="findAll" resultType="com.cmiov.common.model.SysRole">
 		select <include refid="Column_List"/>
 		from sys_role
 		order by create_time desc

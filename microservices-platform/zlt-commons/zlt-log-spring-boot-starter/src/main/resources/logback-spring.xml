@@ -99,7 +99,7 @@
     <logger name="com.central.log.monitor" level="debug" addtivity="false">
         <appender-ref ref="point_log_async" />
     </logger>
-    <logger name="com.central.log.service.impl.LoggerAuditServiceImpl" level="debug" addtivity="false">
+    <logger name="com.cmiov.log.service.impl.LoggerAuditServiceImpl" level="debug" addtivity="false">
         <appender-ref ref="audit_log_async" />
     </logger>
 
