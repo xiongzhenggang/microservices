@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * @date 2018/12/10
  */
 @Configuration
-@MapperScan({"com.central.user.mapper*"})
+@MapperScan({"com.cmiov.user.mapper*"})
 public class MybatisPlusConfig extends DefaultMybatisPlusConfig {
 }

@@ -1,2 +1,2 @@
 org.springframework.context.ApplicationContextInitializer=\
-BannerInitializer
+com.cmiov.common.config.BannerInitializer

@@ -30,7 +30,7 @@ public class TenantProperties {
 
     /**
      * 配置不进行多租户隔离的sql
-     * 需要配置mapper的全路径如：com.central.user.mapper.SysUserMapper.findList
+     * 需要配置mapper的全路径如：com.cmiov.user.mapper.SysUserMapper.findList
      */
     private List<String> ignoreSqls = new ArrayList<>();
 }

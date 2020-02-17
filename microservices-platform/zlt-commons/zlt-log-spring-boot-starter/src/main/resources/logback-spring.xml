@@ -87,7 +87,7 @@
     <appender name="point_log_async" class="ch.qos.logback.classic.AsyncAppender">
         <discardingThreshold>0</discardingThreshold>
         <appender-ref ref="point_log"/>
-    </appender>
+    </appender>central
     <appender name="file_async" class="ch.qos.logback.classic.AsyncAppender">
         <discardingThreshold>0</discardingThreshold>
         <appender-ref ref="FileAppender"/>
@@ -96,7 +96,7 @@
         <discardingThreshold>0</discardingThreshold>
         <appender-ref ref="audit_log"/>
     </appender>
-    <logger name="com.central.log.monitor" level="debug" addtivity="false">
+    <logger name="com.cmiov.log.monitor" level="debug" addtivity="false">
         <appender-ref ref="point_log_async" />
     </logger>
     <logger name="com.cmiov.log.service.impl.LoggerAuditServiceImpl" level="debug" addtivity="false">

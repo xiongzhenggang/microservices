@@ -6,12 +6,12 @@ spring:
           lowerCaseServiceId: true
           enabled: true
       routes:
-        - id: auth
-          uri: lb://uaa-server
+        - id: auth #唯一标识
+          uri: lb://uaa-server #转发的地址,写服务名称
           predicates:
-            - Path=/api-uaa/**
+            - Path=/api-uaa/** #判断匹配条件,即地址带有/api-uaa/**的请求,会转发至lb://uaa-server
           filters:
-            - StripPrefix=1
+            - StripPrefix=1 #去掉Path前缀,参数为1代表去掉/api-uaa
             - PreserveHostHeader
         - id: auth-login-page
           uri: lb://uaa-server
@@ -104,7 +104,7 @@ zlt:
     auth:
       urlPermission:
         #是否开启url级别权限
-        enable: false
+        enable: true
         #配置只进行登录认证，不进行url权限认证的api
         ignoreUrls: >
           /api-user/menus/current,

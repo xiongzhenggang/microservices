@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 import javax.annotation.Resource;
 
 /**
- * @author 作者 owen E-mail: 624191343@qq.com
+ * @author
  */
 @Slf4j
 @Service

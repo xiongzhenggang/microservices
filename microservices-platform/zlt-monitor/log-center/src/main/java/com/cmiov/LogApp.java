@@ -1,4 +1,4 @@
-package com.cmiov.log;
+package com.cmiov;
 
 import com.cmiov.search.annotation.EnableSearchClient;
 import org.springframework.boot.SpringApplication;

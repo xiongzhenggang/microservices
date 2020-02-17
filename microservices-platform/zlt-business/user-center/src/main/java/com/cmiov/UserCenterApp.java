@@ -1,4 +1,4 @@
-package com.cmiov.user;
+package com.cmiov;
 
 import com.cmiov.common.ribbon.annotation.EnableFeignInterceptor;
 import com.cmiov.search.annotation.EnableSearchClient;
@@ -8,7 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author 作者 owen E-mail: 624191343@qq.com
+ * @author
  */
 @EnableDiscoveryClient
 @EnableSearchClient

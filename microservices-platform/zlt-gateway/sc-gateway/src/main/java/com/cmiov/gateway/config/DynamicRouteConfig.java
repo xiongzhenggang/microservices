@@ -35,4 +35,5 @@ public class DynamicRouteConfig {
             return new NacosRouteDefinitionRepository(publisher, nacosConfigProperties);
         }
     }
+    //其他方式
 }

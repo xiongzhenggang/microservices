@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-SecurityPropertiesConfig
+com.cmiov.oauth2.common.config.SecurityPropertiesConfig

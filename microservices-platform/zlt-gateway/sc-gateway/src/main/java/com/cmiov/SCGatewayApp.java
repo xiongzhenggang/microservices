@@ -1,4 +1,4 @@
-package com.cmiov.gateway;
+package com.cmiov;
 
 import com.cmiov.common.ribbon.annotation.EnableBaseFeignInterceptor;
 import org.springframework.boot.SpringApplication;

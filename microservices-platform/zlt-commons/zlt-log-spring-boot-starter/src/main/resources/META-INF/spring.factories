@@ -1,7 +1,7 @@
 org.springframework.context.ApplicationContextInitializer=\
-TtlMDCAdapterInitializer
+com.cmiov.log.config.TtlMDCAdapterInitializer
 
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-LogAutoConfigure,\
-LoggerAuditServiceImpl,\
-AuditLogAspect
+com.cmiov.log.config.LogAutoConfigure,\
+com.cmiov.log.service.impl.LoggerAuditServiceImpl,\
+com.cmiov.log.aspect.AuditLogAspect

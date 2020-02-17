@@ -10,7 +10,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
  */
 @Data
 @ConfigurationProperties(prefix = "zlt.security")
-@RefreshScope
+@RefreshScope //实现配置、实例热加载
 public class SecurityProperties {
     private AuthProperties auth = new AuthProperties();
 

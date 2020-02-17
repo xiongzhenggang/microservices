@@ -22,7 +22,7 @@ public class BannerInitializer implements ApplicationContextInitializer<Configur
         if (!(applicationContext instanceof AnnotationConfigApplicationContext)) {
             LogoBanner logoBanner = new LogoBanner(BannerInitializer.class, "/zltmp/logo.txt", "Welcome ", 1, 29, new Color[5], true);
             CustomBanner.show(logoBanner, new Description(BannerConstant.VERSION + ":", CommonConstant.PROJECT_VERSION, 0, 1)
-                    , new Description("Gitee:", "https://github.com/xiongzhenggang/microservices", 0, 1)
+                    , new Description("Github:", "https://github.com/xiongzhenggang/microservices", 0, 1)
             );
         }
     }

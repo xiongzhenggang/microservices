@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-SentinelAutoConfigure
+com.cmiov.sentinel.config.SentinelAutoConfigure

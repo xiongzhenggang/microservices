@@ -15,4 +15,4 @@ zlt:
     title: 搜索中心
     description: 搜索中心接口文档
     version: 1.0
-    base-package: com.central.search.controller
+    base-package: com.cmiov.search.controller

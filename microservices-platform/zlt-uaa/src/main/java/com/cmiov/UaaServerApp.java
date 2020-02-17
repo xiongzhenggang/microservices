@@ -1,4 +1,4 @@
-package com.cmiov.oauth;
+package com.cmiov;
 
 import com.cmiov.common.ribbon.annotation.EnableFeignInterceptor;
 import org.springframework.boot.SpringApplication;
