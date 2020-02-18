@@ -15,7 +15,7 @@ public interface ISysRoleMenuService extends ISuperService<SysRoleMenu> {
 
 	int delete(Long roleId, Long menuId);
 
-	List<SysMenu> findMenusByRoleIds(Set<Long> roleIds, Integer type);
+	List<SysMenu> findMenusByRoleIds(Set<Long> roleIds, String type);
 
-	List<SysMenu> findMenusByRoleCodes(Set<String> roleCodes, Integer type);
+	List<SysMenu> findMenusByRoleCodes(Set<String> roleCodes, String type);
 }

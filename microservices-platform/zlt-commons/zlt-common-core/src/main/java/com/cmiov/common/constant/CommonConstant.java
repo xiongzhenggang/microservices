@@ -72,12 +72,12 @@ public interface CommonConstant {
     /**
      * 菜单
      */
-    Integer MENU = 1;
+    String MENU = "menu";
 
     /**
      * 权限
      */
-    Integer PERMISSION = 2;
+    String PERMISSION = "resource";
 
     /**
      * 删除标记

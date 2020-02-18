@@ -40,12 +40,12 @@ public interface ISysMenuService extends ISuperService<SysMenu> {
 	 * @param roleIds 是否菜单
 	 * @return
 	 */
-	List<SysMenu> findByRoles(Set<Long> roleIds, Integer type);
+	List<SysMenu> findByRoles(Set<Long> roleIds, String type);
 
 	/**
 	 * 角色菜单列表
 	 * @param roleCodes
 	 * @return
 	 */
-	List<SysMenu> findByRoleCodes(Set<String> roleCodes, Integer type);
+	List<SysMenu> findByRoleCodes(Set<String> roleCodes, String type);
 }

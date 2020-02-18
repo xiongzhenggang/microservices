@@ -32,12 +32,12 @@ public class SysRoleMenuServiceImpl extends SuperServiceImpl<SysRoleMenuMapper, 
 	}
 
 	@Override
-	public List<SysMenu> findMenusByRoleIds(Set<Long> roleIds, Integer type) {
+	public List<SysMenu> findMenusByRoleIds(Set<Long> roleIds, String type) {
 		return sysRoleMenuMapper.findMenusByRoleIds(roleIds, type);
 	}
 
 	@Override
-	public List<SysMenu> findMenusByRoleCodes(Set<String> roleCodes, Integer type) {
+	public List<SysMenu> findMenusByRoleCodes(Set<String> roleCodes, String type) {
 		return sysRoleMenuMapper.findMenusByRoleCodes(roleCodes, type);
 	}
 }

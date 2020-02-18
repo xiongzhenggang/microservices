@@ -43,7 +43,6 @@
 		<if test="type != null">
 			and t.type = #{type}
 		</if>
-		and t.hidden = 0
 		ORDER BY sort ASC
 	</select>
 </mapper>

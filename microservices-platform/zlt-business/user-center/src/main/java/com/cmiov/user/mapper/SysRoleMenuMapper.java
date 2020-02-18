@@ -22,7 +22,7 @@ public interface SysRoleMenuMapper extends SuperMapper<SysRoleMenu> {
 
 	int delete(@Param("roleId") Long roleId, @Param("menuId") Long menuId);
 
-	List<SysMenu> findMenusByRoleIds(@Param("roleIds") Set<Long> roleIds, @Param("type") Integer type);
+	List<SysMenu> findMenusByRoleIds(@Param("roleIds") Set<Long> roleIds, @Param("type") String type);
 
-	List<SysMenu> findMenusByRoleCodes(@Param("roleCodes") Set<String> roleCodes, @Param("type") Integer type);
+	List<SysMenu> findMenusByRoleCodes(@Param("roleCodes") Set<String> roleCodes, @Param("type") String type);
 }

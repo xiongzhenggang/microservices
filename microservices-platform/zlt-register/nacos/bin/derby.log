@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Mon Feb 17 15:56:35 CST 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0170-5226-213a-0000086bd650 
+Tue Feb 18 10:03:31 CST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0170-5609-3cdc-0000086f3c00 
 on database directory F:\workspace\microservices\microservices-platform\zlt-register\nacos\data\derby-data with class loader org.springframework.boot.loader.LaunchedURLClassLoader@3e6fa38a 
 Loaded from jar:file:/F:/workspace/microservices/microservices-platform/zlt-register/nacos/target/nacos-server.jar!/BOOT-INF/lib/derby-10.10.1.1.jar!/
 java.vendor=Oracle Corporation
