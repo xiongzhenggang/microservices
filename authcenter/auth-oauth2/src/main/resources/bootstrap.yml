@@ -1,0 +1,10 @@
+server:
+  port: 8888
+  servlet:
+    session:
+      cookie:
+        name: OAUTH2SESSION
+
+spring:
+  application:
+    name: auth-server

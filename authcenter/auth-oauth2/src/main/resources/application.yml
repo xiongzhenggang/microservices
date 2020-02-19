@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+oauth2:
+  token:
+    store:
+      type: redis
+security:
+  code:
+    # 忽略验证码的应用编号
+    ignoreClientCode: app

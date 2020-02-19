@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:mysql://118.24.61.199:3306/auth-center?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: xzg
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+  redis:
+    host: localhost
+    port: 6379
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.cmiov.user.model
+  global-config:
+    db-config:
+      id-type: auto
+
+cache-manager:
+  configs:
+    - key: menu
+      second: 300
+    - key: user
+      second: 1800
+  #审计日志
+#  audit-log:
+#    enabled: true
