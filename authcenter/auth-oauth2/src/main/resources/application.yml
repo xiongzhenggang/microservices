@@ -3,6 +3,8 @@ spring:
     consul:
       host: localhost
       port: 8500
+  main:
+    allow-bean-definition-overriding: true
 oauth2:
   token:
     store:

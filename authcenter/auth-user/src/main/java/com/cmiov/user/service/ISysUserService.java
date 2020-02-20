@@ -1,6 +1,6 @@
 package com.cmiov.user.service;
 
-import cmiov.user.model.*;
+import com.cmiov.user.model.*;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.cmiov.user.model.*;
 
