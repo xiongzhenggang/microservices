@@ -11,6 +11,8 @@ spring:
   redis:
     host: localhost
     port: 6379
+  main:
+   allow-bean-definition-overriding: true
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔

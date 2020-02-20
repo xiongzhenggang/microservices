@@ -79,6 +79,8 @@ spring:
   redis:
     host: localhost
     port: 6379
+  main:
+   allow-bean-definition-overriding: true
 oauth2:
   token:
     store:
@@ -117,7 +119,6 @@ gateway:
   #网关动态路由
   dynamicRoute:
     enabled: true
-
 hystrix:
   command:
     default:
