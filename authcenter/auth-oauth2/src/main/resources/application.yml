@@ -5,10 +5,19 @@ spring:
       port: 8500
   main:
     allow-bean-definition-overriding: true
+  redis:
+    host: localhost
+    port: 6379
 oauth2:
   token:
-    store:
-      type: redis
+    renew:
+      #是否开启token自动续签（redis实现）
+      enable: true
+      #续签时间比，
+      timeRatio: 0.5
+#      #白名单
+#      includeClientIds:
+#      - webApp
 security:
   code:
     # 忽略验证码的应用编号

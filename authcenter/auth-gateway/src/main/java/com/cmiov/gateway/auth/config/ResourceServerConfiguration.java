@@ -1,6 +1,5 @@
 package com.cmiov.gateway.auth.config;
 
-import cmiov.gateway.auth.*;
 import com.cmiov.gateway.auth.JsonAuthenticationEntryPoint;
 import com.cmiov.gateway.auth.handler.JsonAccessDeniedHandler;
 import com.cmiov.gateway.auth.handler.Oauth2AuthSuccessHandler;

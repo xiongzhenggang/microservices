@@ -35,5 +35,6 @@ public interface SecurityConstants {
     String REDIS_TOKEN_AUTH = "auth:";
     String REDIS_CLIENT_ID_TO_ACCESS = "client_id_to_access:";
     String REDIS_UNAME_TO_ACCESS = "uname_to_access:";
+
 }
 
