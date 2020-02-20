@@ -14,11 +14,7 @@ import java.util.List;
 
 /**
  * @autho
- * @version 创建时间：2017年11月12日 上午22:57:51
- * 类说明
- * 将oauth_client_details表数据缓存到redis，这里做个缓存优化
- * layui模块中有对oauth_client_details的crud， 注意同步redis的数据
- * 注意对oauth_client_details清楚redis db部分数据的清空
+ * @version
  */
 @Slf4j
 public class RedisClientDetailsService extends JdbcClientDetailsService {
