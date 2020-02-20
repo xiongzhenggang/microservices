@@ -2,7 +2,6 @@ package com.cmiov.gateway.utils;
 
 import com.cmiov.gateway.model.Result;
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.core.io.buffer.DataBufferFactory;
 import org.springframework.core.io.buffer.DataBufferUtils;
@@ -12,9 +11,7 @@ import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.Writer;
 import java.nio.charset.Charset;
 
 /**
@@ -34,43 +31,43 @@ public class ResponseUtil {
      * @param httpStatus   返回状态码
      * @throws IOException
      */
-    public static void responseWriter(ObjectMapper objectMapper, HttpServletResponse response, String msg, int httpStatus) throws IOException {
-        Result result = Result.succeedWith(null, httpStatus, msg);
-        responseWrite(objectMapper, response, result);
-    }
-
-    /**
-     * 通过流写到前端
-     * @param objectMapper 对象序列化
-     * @param response
-     * @param obj
-     */
-    public static void responseSucceed(ObjectMapper objectMapper, HttpServletResponse response, Object obj) throws IOException {
-        Result result = Result.succeed(obj);
-        responseWrite(objectMapper, response, result);
-    }
-
-    /**
-     * 通过流写到前端
-     * @param objectMapper
-     * @param response
-     * @param msg
-     * @throws IOException
-     */
-    public static void responseFailed(ObjectMapper objectMapper, HttpServletResponse response, String msg) throws IOException {
-        Result result = Result.failed(msg);
-        responseWrite(objectMapper, response, result);
-    }
-
-    private static void responseWrite(ObjectMapper objectMapper, HttpServletResponse response, Result result) throws IOException {
-        response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
-        try (
-                Writer writer = response.getWriter()
-        ) {
-            writer.write(objectMapper.writeValueAsString(result));
-            writer.flush();
-        }
-    }
+//    public static void responseWriter(ObjectMapper objectMapper, HttpServletResponse response, String msg, int httpStatus) throws IOException {
+//        Result result = Result.succeedWith(null, httpStatus, msg);
+//        responseWrite(objectMapper, response, result);
+//    }
+//
+//    /**
+//     * 通过流写到前端
+//     * @param objectMapper 对象序列化
+//     * @param response
+//     * @param obj
+//     */
+//    public static void responseSucceed(ObjectMapper objectMapper, HttpServletResponse response, Object obj) throws IOException {
+//        Result result = Result.succeed(obj);
+//        responseWrite(objectMapper, response, result);
+//    }
+//
+//    /**
+//     * 通过流写到前端
+//     * @param objectMapper
+//     * @param response
+//     * @param msg
+//     * @throws IOException
+//     */
+//    public static void responseFailed(ObjectMapper objectMapper, HttpServletResponse response, String msg) throws IOException {
+//        Result result = Result.failed(msg);
+//        responseWrite(objectMapper, response, result);
+//    }
+//
+//    private static void responseWrite(ObjectMapper objectMapper, HttpServletResponse response, Result result) throws IOException {
+//        response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
+//        try (
+//                Writer writer = response.getWriter()
+//        ) {
+//            writer.write(objectMapper.writeValueAsString(result));
+//            writer.flush();
+//        }
+//    }
 
     /**
      * webflux的response返回json对象
