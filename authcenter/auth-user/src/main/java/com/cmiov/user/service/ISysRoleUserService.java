@@ -1,6 +1,6 @@
 package com.cmiov.user.service;
 
-import com.cmiov.user.model.SysRole;
+import com.cmiov.role.model.SysRole;
 import com.cmiov.user.model.SysRoleUser;
 import com.baomidou.mybatisplus.extension.service.IService;
 

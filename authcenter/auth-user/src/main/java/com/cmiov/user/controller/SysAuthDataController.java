@@ -1,7 +1,7 @@
 package com.cmiov.user.controller;
 
-import com.cmiov.user.model.PageResult;
-import com.cmiov.user.model.Result;
+import com.cmiov.commonentity.PageResult;
+import com.cmiov.commonentity.Result;
 import com.cmiov.user.model.SysAuthData;
 import com.cmiov.user.service.ISysAuthDataService;
 import lombok.extern.slf4j.Slf4j;

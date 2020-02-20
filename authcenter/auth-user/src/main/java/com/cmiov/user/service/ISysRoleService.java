@@ -1,8 +1,8 @@
 package com.cmiov.user.service;
 
-import com.cmiov.user.model.PageResult;
-import com.cmiov.user.model.Result;
-import com.cmiov.user.model.SysRole;
+import com.cmiov.commonentity.PageResult;
+import com.cmiov.commonentity.Result;
+import com.cmiov.role.model.SysRole;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;

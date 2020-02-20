@@ -2,6 +2,8 @@ package com.cmiov.user.model;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.cmiov.commonentity.SuperEntity;
+import com.cmiov.role.model.SysRole;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

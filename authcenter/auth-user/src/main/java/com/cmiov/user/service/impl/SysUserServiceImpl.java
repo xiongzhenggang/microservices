@@ -1,7 +1,12 @@
 package com.cmiov.user.service.impl;
 
-import com.cmiov.user.constant.CommonConstant;
-import com.cmiov.user.mapper.SysRoleMenuMapper;
+import com.cmiov.commonentity.PageResult;
+import com.cmiov.commonentity.Result;
+import com.cmiov.commonentity.SuperEntity;
+import com.cmiov.constant.CommonConstant;
+import com.cmiov.menu.model.SysMenu;
+import com.cmiov.role.model.SysRole;
+import com.cmiov.role.mapper.SysRoleMenuMapper;
 import com.cmiov.user.mapper.SysUserMapper;
 import com.cmiov.user.model.*;
 import com.cmiov.user.service.ISysRoleUserService;

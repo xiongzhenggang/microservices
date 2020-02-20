@@ -1,7 +1,7 @@
 package com.cmiov.user.service.impl;
 
 import com.cmiov.user.mapper.SysUserRoleMapper;
-import com.cmiov.user.model.SysRole;
+import com.cmiov.role.model.SysRole;
 import com.cmiov.user.model.SysRoleUser;
 import com.cmiov.user.service.ISysRoleUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

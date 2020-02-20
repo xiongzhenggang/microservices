@@ -14,7 +14,7 @@
 		</where>
 	</delete>
 
-	<select id="findRolesByUserId" resultType="com.cmiov.user.model.SysRole">
+	<select id="findRolesByUserId" resultType="com.cmiov.role.model.SysRole">
 		select r.* from sys_role r
 		inner join sys_user_role_rel ru on r.id = ru.role_id and ru.user_id = #{userId}
 	</select>

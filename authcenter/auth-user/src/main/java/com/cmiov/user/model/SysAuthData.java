@@ -1,6 +1,7 @@
 package com.cmiov.user.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.cmiov.commonentity.SuperEntity;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,6 @@
 package com.cmiov.user.service;
 
-import com.cmiov.user.model.PageResult;
+import com.cmiov.commonentity.PageResult;
 import com.cmiov.user.model.SysAuthData;
 import com.baomidou.mybatisplus.extension.service.IService;
 
