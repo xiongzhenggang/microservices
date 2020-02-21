@@ -6,71 +6,10 @@ spring:
           lowerCaseServiceId: true
           enabled: true
       routes:
-        - id: auth #唯一标识
-          uri: lb://uaa-server #转发的地址,写服务名称
-          predicates:
-            - Path=/api-uaa/** #判断匹配条件,即地址带有/api-uaa/**的请求,会转发至lb://uaa-server
-          filters:
-            - StripPrefix=1 #去掉Path前缀,参数为1代表去掉/api-uaa
-            - PreserveHostHeader
-        - id: auth-login-page
-          uri: lb://uaa-server
-          predicates:
-            - Path=/login.html
-          filters:
-            - PreserveHostHeader
-        - id: auth-login-process
-          uri: lb://uaa-server
-          predicates:
-            - Path=/user/login
-          filters:
-            - PreserveHostHeader
-        - id: auth-login-token
-          uri: lb://uaa-server
-          predicates:
-            - Path=/oauth/token
-          filters:
-            - PreserveHostHeader
-        - id: auth-login-authorize
-          uri: lb://uaa-server
-          predicates:
-            - Path=/oauth/authorize
-          filters:
-            - PreserveHostHeader
-        - id: auth-check-process
-          uri: lb://uaa-server
-          predicates:
-            - Path=/oauth/check_token
-          filters:
-            - PreserveHostHeader
         - id: user
           uri: lb://user-center
           predicates:
             - Path=/api-user/**
-          filters:
-            - StripPrefix=1
-        - id: file
-          uri: lb://file-center
-          predicates:
-            - Path=/api-file/**
-          filters:
-            - StripPrefix=1
-        - id: log
-          uri: lb://log-center
-          predicates:
-            - Path=/api-log/**
-          filters:
-            - StripPrefix=1
-        - id: generator
-          uri: lb://code-generator
-          predicates:
-            - Path=/api-generator/**
-          filters:
-            - StripPrefix=1
-        - id: search
-          uri: lb://search-center
-          predicates:
-            - Path=/api-search/**
           filters:
             - StripPrefix=1
     consul:
