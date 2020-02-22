@@ -1,4 +1,4 @@
-package com.cmiov.redis.constant;
+package com.cmiov.auth.redis.constant;
 
 /**
  * redis 工具常量

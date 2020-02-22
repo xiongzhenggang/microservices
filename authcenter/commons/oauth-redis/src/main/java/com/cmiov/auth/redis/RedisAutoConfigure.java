@@ -1,8 +1,8 @@
-package com.cmiov.redis;
+package com.cmiov.auth.redis;
 
-import com.cmiov.redis.properties.CacheManagerProperties;
-import com.cmiov.redis.template.RedisRepository;
-import com.cmiov.redis.util.RedisObjectSerializer;
+import com.cmiov.auth.redis.properties.CacheManagerProperties;
+import com.cmiov.auth.redis.template.RedisRepository;
+import com.cmiov.auth.redis.util.RedisObjectSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;

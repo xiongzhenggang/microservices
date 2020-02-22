@@ -1,4 +1,4 @@
-package com.cmiov.redis.template;
+package com.cmiov.auth.redis.template;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
@@ -39,6 +39,12 @@ public class RedisRepository {
      * value 序列化
      */
     private static final JdkSerializationRedisSerializer OBJECT_SERIALIZER = new JdkSerializationRedisSerializer();
+
+    /**
+     * value 序列化
+     */
+//    private static final JdkSerializationRedisSerializer FASTJSON_SERIALIZER = new JdkSerializationRedisSerializer();
+
 
     /**
      * Spring Redis Template

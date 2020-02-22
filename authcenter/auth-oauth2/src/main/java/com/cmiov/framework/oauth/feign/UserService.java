@@ -1,8 +1,8 @@
 package com.cmiov.framework.oauth.feign;
 
+import com.cmiov.auth.redis.model.AppLoginUser;
+import com.cmiov.auth.redis.model.SysUser;
 import com.cmiov.framework.oauth.feign.fallback.UserServiceFallbackFactory;
-import com.cmiov.framework.oauth.dto.AppLoginUser;
-import com.cmiov.framework.oauth.dto.SysUser;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * @autho
  */
-@FeignClient(name = "auth-user", fallbackFactory = UserServiceFallbackFactory.class, decode404 = true)
+@FeignClient(name = "${user.application.name}", fallbackFactory = UserServiceFallbackFactory.class, decode404 = true)
 public interface UserService {
     /**
      * feign rpc访问远程/users/{username}接口

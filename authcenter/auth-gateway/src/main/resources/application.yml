@@ -12,6 +12,12 @@ spring:
             - Path=/api-user/**
           filters:
             - StripPrefix=1
+        - id: auth
+          uri: lb://auth-server
+          predicates:
+            - Path=/api-auth/**
+          filters:
+            - StripPrefix=1
     consul:
       host: localhost
       port: 8500
@@ -28,11 +34,8 @@ security:
   ignore:
     # 忽略认证的地址
     httpUrls: >
-      /api-uaa/oauth/**,
-      /api-uaa/validata/**,
-      /api-uaa/css/**,
-      /api-uaa/images/**,
-      /api-uaa/js/**,
+      /api-auth/oauth/**,
+      /api-auth/validata/**,
       /api-user/users-anon/**,
       /login.html,
       /user/login
@@ -44,7 +47,8 @@ security:
       ignoreUrls: >
         /api-user/menus/current,
         /api-user/users/current,
-        /api-log/requestStat
+        /api-log/requestStat,
+        /api-auth/validata/
       #白名单
       includeClientIds:
         - webApp

@@ -82,7 +82,7 @@
         <dependencies>
             <dependency>
                 <groupId>com.cmiov</groupId>
-                <artifactId>redis</artifactId>
+                <artifactId>oauth-redis</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

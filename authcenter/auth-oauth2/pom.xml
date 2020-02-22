@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.cmiov</groupId>
-            <artifactId>redis</artifactId>
+            <artifactId>oauth-redis</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>

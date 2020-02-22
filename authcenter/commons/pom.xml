@@ -12,7 +12,7 @@
     <artifactId>commons</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>redis</module>
+        <module>oauth-redis</module>
     </modules>
 
 

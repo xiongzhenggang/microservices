@@ -19,7 +19,7 @@ import java.util.Set;
 @Getter
 @Setter
 public class LoginAppUser extends SysUser implements SocialUserDetails {
-    private static final long serialVersionUID = -3685249101751401211L;
+    private static final long serialVersionUID = -3685249101753441322L;
 
     private Set<String> permissions;
 

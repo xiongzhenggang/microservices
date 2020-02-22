@@ -2,7 +2,9 @@ package com.cmiov.framework.oauth.filter;
 
 import com.cmiov.framework.oauth.constant.SecurityConstants;
 import com.cmiov.framework.oauth.exception.ValidateCodeException;
+import com.cmiov.framework.oauth.properties.ClientCodeProperties;
 import com.cmiov.framework.oauth.service.IValidateCodeService;
+import com.cmiov.framework.oauth.utils.AuthUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -31,6 +33,10 @@ public class ValidateCodeFilter extends OncePerRequestFilter {
      */
     @Autowired
     private AuthenticationFailureHandler authenticationFailureHandler;
+
+    @Autowired
+
+    private ClientCodeProperties clientCodeProperties;
     /**
      * 验证请求url与配置的url是否匹配的工具类
      */
@@ -44,22 +50,22 @@ public class ValidateCodeFilter extends OncePerRequestFilter {
         //登录提交的时候验证验证码
         if (pathMatcher.match(SecurityConstants.PASSWORD_LOGIN_PRO_URL, request.getRequestURI())) {
             //判断是否有不验证验证码的client
-//            if (securityProperties.getCode().getIgnoreClientCode().length > 0) {
-//                try {
-//                    final String[] clientInfos = AuthUtils.extractClient(request);
-//                    String clientId = clientInfos[0];
-//                    for (String client : securityProperties.getCode().getIgnoreClientCode()) {
-//                        if (client.equals(clientId)) {
-//                            return true;
-//                        }
-//                    }
-//                } catch (Exception e) {
-//                    log.error("解析client信息失败", e);
-//                }
-//            }
-//            return false;
+            if (clientCodeProperties.getIgnoreClientCode().length > 0) {
+                try {
+                    final String[] clientInfos = AuthUtils.extractClient(request);
+                    String clientId = clientInfos[0];
+                    for (String client : clientCodeProperties.getIgnoreClientCode()) {
+                        if (client.equals(clientId)) {
+                            return true;
+                        }
+                    }
+                } catch (Exception e) {
+                    log.error("解析client信息失败", e);
+                }
+            }
+            return false;
         }
-        return false;
+        return true;
     }
 
     @Override

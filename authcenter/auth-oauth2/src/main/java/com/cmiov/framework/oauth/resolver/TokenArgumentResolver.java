@@ -1,10 +1,10 @@
 package com.cmiov.framework.oauth.resolver;
 
+import com.cmiov.auth.redis.model.SysRole;
+import com.cmiov.auth.redis.model.SysUser;
 import com.cmiov.framework.oauth.annotation.LoginUser;
 import com.cmiov.framework.oauth.constant.SecurityConstants;
 import com.cmiov.framework.oauth.feign.UserService;
-import com.cmiov.framework.oauth.dto.SysRole;
-import com.cmiov.framework.oauth.dto.SysUser;
 import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;

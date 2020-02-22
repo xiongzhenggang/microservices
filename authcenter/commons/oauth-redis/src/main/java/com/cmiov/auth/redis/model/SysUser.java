@@ -1,10 +1,10 @@
-package com.cmiov.framework.oauth.dto;
-
-import java.util.Date;
-import java.util.List;
+package com.cmiov.auth.redis.model;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -14,8 +14,8 @@ import lombok.EqualsAndHashCode;
  * @date 2020-02-13 09:59:33
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-public class SysUser  {
+public class SysUser implements Serializable {
+	private static final long serialVersionUID = 3914646659481134073L;
 	private Long id;
 	private Date createTime;
 	private Date updateTime;

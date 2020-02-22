@@ -1,7 +1,7 @@
 package com.cmiov.framework.gateway.auth.handler;
 
+import com.cmiov.auth.redis.model.SysUser;
 import com.cmiov.framework.gateway.constant.SecurityConstants;
-import com.cmiov.framework.gateway.model.SysUser;
 import cn.hutool.core.collection.CollectionUtil;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.security.core.Authentication;

@@ -13,6 +13,9 @@ spring:
   redis:
     host: localhost
     port: 6379
+user:
+  application:
+    name: user-center
 oauth2:
   token:
     renew:

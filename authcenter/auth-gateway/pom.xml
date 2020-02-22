@@ -13,11 +13,15 @@
     <dependencies>
         <dependency>
         <groupId>com.cmiov</groupId>
-        <artifactId>redis</artifactId>
+        <artifactId>oauth-redis</artifactId>
     </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-security</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

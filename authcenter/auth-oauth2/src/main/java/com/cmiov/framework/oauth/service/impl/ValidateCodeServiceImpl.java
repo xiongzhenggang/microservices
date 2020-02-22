@@ -1,8 +1,9 @@
 package com.cmiov.framework.oauth.service.impl;
 
+import com.cmiov.auth.redis.model.SysUser;
+import com.cmiov.auth.redis.template.RedisRepository;
 import com.cmiov.framework.oauth.constant.SecurityConstants;
 import com.cmiov.framework.oauth.dto.Result;
-import com.cmiov.framework.oauth.dto.SysUser;
 import com.cmiov.framework.oauth.exception.ValidateCodeException;
 import com.cmiov.framework.oauth.feign.UserService;
 import com.cmiov.framework.oauth.service.IValidateCodeService;
@@ -13,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.ServletRequestUtils;
-import com.cmiov.redis.template.RedisRepository;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;

@@ -3,6 +3,7 @@ package com.cmiov.framework.sys.menu.api;
 import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.menu.entity.SysMenu;
+import com.cmiov.framework.sys.user.entity.SysUser;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cache.annotation.Cacheable;
@@ -63,12 +64,12 @@ public interface SysMenuApi {
     @PostMapping("saveOrUpdate")
      Result saveOrUpdate(@RequestBody SysMenu menu);
 
-//    /**
-//     * 当前登录用户的菜单
-//     *
-//     * @return
-//     */
+    /**
+     * 当前登录用户的菜单
+     *
+     * @return
+     */
 //    @GetMapping("/current")
 //    @ApiOperation(value = "查询当前用户菜单")
-//    public List<SysMenu> findMyMenu(@LoginUser SysUser user);
+//    public List<SysMenu> findMyMenu();
 }

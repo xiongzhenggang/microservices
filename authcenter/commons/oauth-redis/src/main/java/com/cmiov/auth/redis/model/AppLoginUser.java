@@ -1,18 +1,16 @@
-package com.cmiov.framework.oauth.dto;
+package com.cmiov.auth.redis.model;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.social.security.SocialUserDetails;
 import org.springframework.util.CollectionUtils;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import lombok.Getter;
-import lombok.Setter;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @autho
@@ -21,7 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AppLoginUser extends SysUser implements SocialUserDetails {
-
+    private static final long serialVersionUID = -3685249101753441322L;
     private Set<String> permissions;
 
     /***

@@ -270,6 +270,7 @@ public class CustomRedisTokenStore implements TokenStore {
                     this.redisConnectionSet_2_0.invoke(conn, accessKey, serializedAccessToken);
                     this.redisConnectionSet_2_0.invoke(conn, authKey, serializedAuth);
                     this.redisConnectionSet_2_0.invoke(conn, authToAccessKey, serializedAccessToken);
+
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }

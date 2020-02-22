@@ -1,4 +1,4 @@
-package com.cmiov.redis.util;
+package com.cmiov.auth.redis.util;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.serializer.support.DeserializingConverter;

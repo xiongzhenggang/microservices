@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.cmiov.redis.RedisAutoConfigure
+com.cmiov.auth.redis.RedisAutoConfigure
