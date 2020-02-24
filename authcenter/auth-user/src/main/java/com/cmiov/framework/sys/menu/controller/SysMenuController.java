@@ -1,14 +1,18 @@
 package com.cmiov.framework.sys.menu.controller;
 
+import com.cmiov.framework.sys.annotation.LoginUserInfo;
 import com.cmiov.framework.sys.constant.CommonConstant;
 import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.menu.api.SysMenuApi;
 import com.cmiov.framework.sys.menu.entity.SysMenu;
 import com.cmiov.framework.sys.menu.service.ISysMenuService;
+import com.cmiov.framework.sys.role.entity.SysRole;
+import com.cmiov.framework.sys.user.entity.SysUser;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -143,18 +147,18 @@ public class SysMenuController implements SysMenuApi {
         }
     }
 
-//    /**
-//     * 当前登录用户的菜单
-//     *
-//     * @return
-//     */
-//    @GetMapping("/current")
-//    public List<SysMenu> findMyMenu(@LoginUser SysUser user) {
-//        List<SysRole> roles = user.getRoles();
-//        if (CollectionUtil.isEmpty(roles)) {
-//            return Collections.emptyList();
-//        }
-//        List<SysMenu> menus = menuService.findByRoleCodes(roles.parallelStream().map(SysRole::getCode).collect(Collectors.toSet()), CommonConstant.MENU);
-//        return treeBuilder(menus);
-//    }
+    /**
+     * 当前登录用户的菜单
+     *
+     * @return
+     */
+    @Override
+    public List<SysMenu> findMyMenu(@LoginUserInfo SysUser user) {
+        List<SysRole> roles = user.getRoles();
+        if (CollectionUtils.isEmpty(roles)) {
+            return Collections.emptyList();
+        }
+        List<SysMenu> menus = menuService.findByRoleCodes(roles.parallelStream().map(SysRole::getCode).collect(Collectors.toSet()), CommonConstant.MENU_MENU);
+        return treeBuilder(menus);
+    }
 }

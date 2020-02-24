@@ -1,5 +1,6 @@
 package com.cmiov.framework.sys.menu.api;
 
+import com.cmiov.framework.sys.annotation.LoginUserInfo;
 import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.menu.entity.SysMenu;
@@ -69,7 +70,7 @@ public interface SysMenuApi {
      *
      * @return
      */
-//    @GetMapping("/current")
-//    @ApiOperation(value = "查询当前用户菜单")
-//    public List<SysMenu> findMyMenu();
+    @GetMapping("/current")
+    @ApiOperation(value = "查询当前用户菜单")
+    public List<SysMenu> findMyMenu(@LoginUserInfo SysUser user);
 }
