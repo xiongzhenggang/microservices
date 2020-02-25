@@ -37,6 +37,12 @@ public class ResourceServerConfiguration {
     @Autowired
     private PermissionAuthManager permissionAuthManager;
 
+    /**
+     * This bean is responsible for all the security (protecting the application URLs, validating submitted username and passwords,
+     * redirecting to the log in form, and so on) within your application
+     * @param http
+     * @return
+     */
     @Bean
     SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
         //认证处理器
