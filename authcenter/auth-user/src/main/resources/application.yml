@@ -30,3 +30,7 @@ cache-manager:
   #审计日志
 #  audit-log:
 #    enabled: true
+
+logging:
+  level:
+    com.cmiov.framework.sys.organ.mapper : debug

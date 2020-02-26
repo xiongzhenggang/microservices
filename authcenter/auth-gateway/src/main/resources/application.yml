@@ -58,6 +58,9 @@ security:
       #白名单
       includeClientIds:
         - webApp
+application:
+  user:
+    service: user-center
 gateway:
   #网关动态路由
   dynamicRoute:

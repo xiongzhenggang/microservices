@@ -5,7 +5,7 @@ import java.lang.annotation.*;
 /**
  * @author xzg
  * 请求的方法参数SysUser上添加该注解，注入当前登录人信息
- * (@LoginUser SysUser user)
+ * (@LoginUser SysUserDto user)
  */
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)

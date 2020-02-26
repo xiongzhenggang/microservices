@@ -1,4 +1,4 @@
-package com.cmiov.framework.sys.user.entity;
+package com.cmiov.framework.sys.user.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
@@ -18,7 +18,7 @@ import java.util.Set;
  */
 @Getter
 @Setter
-public class LoginAppUser extends SysUser implements SocialUserDetails {
+public class LoginAppUser extends SysUserDto implements SocialUserDetails {
     private static final long serialVersionUID = -3685249101753441322L;
 
     private Set<String> permissions;

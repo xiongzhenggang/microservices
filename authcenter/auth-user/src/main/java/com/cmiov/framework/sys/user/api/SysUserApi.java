@@ -1,15 +1,16 @@
 package com.cmiov.framework.sys.user.api;
 
+import com.cmiov.framework.sys.annotation.LoginUserInfo;
 import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.role.entity.SysRole;
-import com.cmiov.framework.sys.user.entity.LoginAppUser;
+import com.cmiov.framework.sys.user.dto.LoginAppUser;
 import com.cmiov.framework.sys.user.entity.SysUser;
+import com.cmiov.framework.sys.user.dto.SysUserDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -33,11 +34,9 @@ public interface SysUserApi {
 //     *
 //     * @return
 //     */
-//    @ApiOperation(value = "根据access_token当前登录用户")
-//    @GetMapping("/users/current")
-//    public Result<LoginAppUser> getLoginAppUser(@LoginUser(isFull = true) SysUser user) {
-//        return Result.succeed(appUserService.getLoginAppUser(user));
-//    }
+    @ApiOperation(value = "根据access_token当前登录用户")
+    @GetMapping("/users/current")
+    Result<LoginAppUser> getLoginAppUser(@LoginUserInfo(isFull = true) SysUserDto user);
 
     /**
      * 查询用户实体对象SysUser
@@ -45,7 +44,7 @@ public interface SysUserApi {
     @GetMapping(value = "/users/name/{username}")
     @ApiOperation(value = "根据用户名查询用户实体")
     @Cacheable(value = "user", key = "#username")
-     SysUser selectByUsername(@PathVariable String username) ;
+    SysUserDto selectByUsername(@PathVariable String username) ;
 
     /**
      * 查询用户登录对象LoginAppUser
@@ -61,7 +60,7 @@ public interface SysUserApi {
 //     */
 //    @GetMapping(value = "/users-anon/mobile", params = "mobile")
 //    @ApiOperation(value = "根据手机号查询用户")
-//     SysUser findByMobile(String mobile);
+//     SysUserDto findByMobile(String mobile);
 
 
     @GetMapping("/users/{id}")

@@ -20,7 +20,10 @@ public interface SecurityConstants {
      * 用户id信息头
      */
     String USER_ID_HEADER = "x-userid-header";
-
+    /**
+     * 用户id信息头
+     */
+    String ORG_ID_HEADER = "x-orgid-header";
     /**
      * 角色信息头
      */

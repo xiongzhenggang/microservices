@@ -5,4 +5,8 @@
     <select id="findList" resultType="com.cmiov.framework.sys.organ.entity.SysOrgUserRel">
         select * from sys_org_user_rel t
     </select>
+    <select id="findOrganByUserId" resultType="com.cmiov.framework.sys.organ.entity.SysOrg">
+        select o.* from sys_org o
+        inner join sys_org_user_rel ou on o.id = ou.org_id and ou.user_id = #{userId}
+    </select>
 </mapper>

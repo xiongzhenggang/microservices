@@ -5,6 +5,8 @@ import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.user.entity.*;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.cmiov.framework.sys.user.dto.LoginAppUser;
+import com.cmiov.framework.sys.user.dto.SysUserDto;
 
 import java.util.List;
 import java.util.Map;
@@ -30,26 +32,26 @@ public interface ISysUserService extends IService<SysUser> {
 	 * @param sysUser
 	 * @return
 	 */
-	LoginAppUser getLoginAppUser(SysUser sysUser);
+	LoginAppUser getLoginAppUser(SysUserDto sysUser);
 
 	/**
 	 * 根据用户名查询用户
 	 * @param username
 	 * @return
 	 */
-	SysUser selectByUsername(String username);
+	SysUserDto selectByUsername(String username);
 	/**
 	 * 根据手机号查询用户
 	 * @param mobile
 	 * @return
 	 */
-	SysUser selectByMobile(String mobile);
+	SysUserDto selectByMobile(String mobile);
 	/**
 	 * 根据openId查询用户
 	 * @param openId
 	 * @return
 	 */
-	SysUser selectByOpenId(String openId);
+	SysUserDto selectByOpenId(String openId);
 
 	/**
 	 * 用户分配角色

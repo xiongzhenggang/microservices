@@ -1,8 +1,8 @@
-package com.cmiov.auth.redis.model;
+package com.cmiov.framework.sys.user.dto;
 
+import com.cmiov.framework.sys.role.entity.SysRole;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -14,8 +14,8 @@ import java.util.List;
  * @date 2020-02-13 09:59:33
  */
 @Data
-public class SysUser implements Serializable {
-	private static final long serialVersionUID = 3914646659481134073L;
+public class SysUserDto {
+
 	private Long id;
 	private Date createTime;
 	private Date updateTime;
@@ -33,9 +33,9 @@ public class SysUser implements Serializable {
 	private String openId;
 
 	private List<SysRole> roles;
+	private Long orgId;
+	private String orgName;
 	private String roleId;
 	private String oldPassword;
 	private String newPassword;
-	private Long orgId;
-	private String orgName;
 }

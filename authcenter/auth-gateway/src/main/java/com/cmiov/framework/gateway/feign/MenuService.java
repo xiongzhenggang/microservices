@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @author
  */
-@FeignClient(name = "user-center", fallbackFactory = MenuServiceFallbackFactory.class, decode404 = true)
+@FeignClient(name = "${application.user.service}", fallbackFactory = MenuServiceFallbackFactory.class, decode404 = true)
 public interface MenuService {
 	/**
 	 * 角色菜单列表

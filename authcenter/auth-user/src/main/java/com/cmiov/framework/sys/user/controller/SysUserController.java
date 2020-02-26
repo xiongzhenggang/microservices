@@ -1,11 +1,14 @@
 package com.cmiov.framework.sys.user.controller;
 
+import com.cmiov.framework.sys.annotation.LoginUserInfo;
 import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.user.api.SysUserApi;
 import com.cmiov.framework.sys.user.entity.*;
 import com.cmiov.framework.sys.user.service.ISysUserService;
+import com.cmiov.framework.sys.user.dto.LoginAppUser;
+import com.cmiov.framework.sys.user.dto.SysUserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,8 +43,9 @@ public class SysUserController implements SysUserApi {
      * @return
      */
 //    @ApiOperation(value = "根据access_token当前登录用户")
-    @GetMapping("/users/current")
-    public Result<LoginAppUser> getLoginAppUser(SysUser user) {
+//    @GetMapping("/users/current")
+    @Override
+    public Result<LoginAppUser> getLoginAppUser(@LoginUserInfo(isFull = true) SysUserDto user) {
         return Result.succeed(appUserService.getLoginAppUser(user));
     }
 
@@ -49,7 +53,7 @@ public class SysUserController implements SysUserApi {
      * 查询用户实体对象SysUser
      */
     @Override
-    public SysUser selectByUsername(@PathVariable String username) {
+    public SysUserDto selectByUsername(@PathVariable String username) {
         return appUserService.selectByUsername(username);
     }
 

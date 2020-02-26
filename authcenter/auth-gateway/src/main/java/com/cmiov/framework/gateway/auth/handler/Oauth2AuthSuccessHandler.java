@@ -30,12 +30,12 @@ public class Oauth2AuthSuccessHandler implements ServerAuthenticationSuccessHand
             SysUser user = (SysUser)authentication.getPrincipal();
             headerValues.add(SecurityConstants.USER_ID_HEADER, String.valueOf(user.getId()));
             headerValues.add(SecurityConstants.USER_HEADER, user.getUserName());
+            headerValues.add(SecurityConstants.ORG_ID_HEADER, String.valueOf(user.getOrgId()));
         }
-        OAuth2Authentication oauth2Authentication = (OAuth2Authentication)authentication;
-        String clientId = oauth2Authentication.getOAuth2Request().getClientId();
+//        OAuth2Authentication oauth2Authentication = (OAuth2Authentication)authentication;
+//        String clientId = oauth2Authentication.getOAuth2Request().getClientId();
 //        headerValues.add(SecurityConstants.TENANT_HEADER, clientId);
         headerValues.add(SecurityConstants.ROLE_HEADER, CollectionUtil.join(authentication.getAuthorities(), ","));
-
         ServerWebExchange exchange = webFilterExchange.getExchange();
         ServerHttpRequest serverHttpRequest = exchange.getRequest().mutate()
                 .headers(h -> {

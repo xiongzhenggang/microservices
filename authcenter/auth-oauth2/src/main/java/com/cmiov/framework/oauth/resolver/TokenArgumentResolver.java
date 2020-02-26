@@ -22,7 +22,7 @@ import java.util.List;
  * Token转化SysUser
  *
  * @author
- * @date 2018/12/21
+ * @date 2020/2/26
  */
 @Slf4j
 public class TokenArgumentResolver implements HandlerMethodArgumentResolver {

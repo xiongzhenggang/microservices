@@ -1,5 +1,6 @@
 package com.cmiov.framework.sys.organ.mapper;
 
+import com.cmiov.framework.sys.organ.entity.SysOrg;
 import com.cmiov.framework.sys.organ.entity.SysOrgUserRel;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -22,4 +23,11 @@ public interface SysOrgUserRelMapper extends BaseMapper<SysOrgUserRel> {
      * @return
      */
     List<SysOrgUserRel> findList(Page<SysOrgUserRel> page, @Param("p") Map<String, Object> params);
+
+    /**
+     * 用户ID 查询组织机构
+     * @param userId
+     * @return
+     */
+    SysOrg findOrganByUserId(Long userId);
 }

@@ -5,6 +5,8 @@ import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.commonentity.SuperEntity;
 import com.cmiov.framework.sys.constant.CommonConstant;
 import com.cmiov.framework.sys.menu.entity.SysMenu;
+import com.cmiov.framework.sys.organ.entity.SysOrg;
+import com.cmiov.framework.sys.organ.mapper.SysOrgUserRelMapper;
 import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.role.mapper.SysRoleMenuMapper;
 import com.cmiov.framework.sys.user.mapper.SysUserMapper;
@@ -14,6 +16,8 @@ import com.cmiov.framework.sys.user.service.ISysUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.cmiov.framework.sys.user.dto.LoginAppUser;
+import com.cmiov.framework.sys.user.dto.SysUserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ObjectUtils;
@@ -45,31 +49,35 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Resource
     private SysRoleMenuMapper roleMenuMapper;
 
-
+    @Resource
+    private SysOrgUserRelMapper orgUserMapper;
     @Override
     public LoginAppUser findByUsername(String username) {
-        SysUser sysUser = this.selectByUsername(username);
+        SysUserDto sysUser = this.selectByUsername(username);
         return getLoginAppUser(sysUser);
     }
 
     @Override
     public LoginAppUser findByOpenId(String username) {
-        SysUser sysUser = this.selectByOpenId(username);
+        SysUserDto sysUser = this.selectByOpenId(username);
         return getLoginAppUser(sysUser);
     }
 
     @Override
     public LoginAppUser findByMobile(String username) {
-        SysUser sysUser = this.selectByMobile(username);
+        SysUserDto sysUser = this.selectByMobile(username);
         return getLoginAppUser(sysUser);
     }
 
     @Override
-    public LoginAppUser getLoginAppUser(SysUser sysUser) {
+    public LoginAppUser getLoginAppUser(SysUserDto sysUser) {
         if (sysUser != null) {
             LoginAppUser loginAppUser = new LoginAppUser();
             BeanUtils.copyProperties(sysUser, loginAppUser);
-
+            //设置组织机构
+            SysOrg org =  orgUserMapper.findOrganByUserId(sysUser.getId());
+            loginAppUser.setOrgId(org.getId());
+            loginAppUser.setOrgName(org.getName());
             List<SysRole> sysRoles = roleUserService.findRolesByUserId(sysUser.getId());
             // 设置角色
             loginAppUser.setRoles(sysRoles);
@@ -95,7 +103,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
      * @return
      */
     @Override
-    public SysUser selectByUsername(String username) {
+    public SysUserDto selectByUsername(String username) {
         List<SysUser> users = baseMapper.selectList(
                 new QueryWrapper<SysUser>().eq("user_name", username)
         );
@@ -108,7 +116,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
      * @return
      */
     @Override
-    public SysUser selectByMobile(String mobile) {
+    public SysUserDto selectByMobile(String mobile) {
         List<SysUser> users = baseMapper.selectList(
                 new QueryWrapper<SysUser>().eq("mobile", mobile)
         );
@@ -121,17 +129,18 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
      * @return
      */
     @Override
-    public SysUser selectByOpenId(String openId) {
+    public SysUserDto selectByOpenId(String openId) {
         List<SysUser> users = baseMapper.selectList(
                 new QueryWrapper<SysUser>().eq("open_id", openId)
         );
         return getUser(users);
     }
 
-    private SysUser getUser(List<SysUser> users) {
-        SysUser user = null;
+    private SysUserDto getUser(List<SysUser> users) {
+        SysUserDto user = null;
         if (users != null && !users.isEmpty()) {
-            user = users.get(0);
+            user = new SysUserDto();
+            BeanUtils.copyProperties(users.get(0),user);
         }
         return user;
     }
@@ -224,7 +233,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         }
         super.save(sysUser);
 //        boolean result = super.saveOrUpdateIdempotency(sysUser, lock
-//                , LOCK_KEY_USERNAME+username, new QueryWrapper<SysUser>().eq("user_name", username)
+//                , LOCK_KEY_USERNAME+username, new QueryWrapper<SysUserDto>().eq("user_name", username)
 //                , username+"已存在");
         //更新角色
         if (StringUtils.isNotEmpty(sysUser.getRoleId())) {

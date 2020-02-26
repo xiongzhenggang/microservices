@@ -5,4 +5,5 @@
     <select id="findList" resultType="com.cmiov.framework.sys.organ.entity.SysOrg">
         select * from sys_org t
     </select>
+
 </mapper>

@@ -3,8 +3,8 @@ package com.cmiov.framework.sys.config;
 import com.cmiov.framework.sys.annotation.LoginUserInfo;
 import com.cmiov.framework.sys.constant.CommonConstant;
 import com.cmiov.framework.sys.role.entity.SysRole;
-import com.cmiov.framework.sys.user.entity.SysUser;
 import com.cmiov.framework.sys.user.service.ISysUserService;
+import com.cmiov.framework.sys.user.dto.SysUserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.MethodParameter;
@@ -34,7 +34,7 @@ public class UserArgumentResolver implements HandlerMethodArgumentResolver {
      */
     @Override
     public boolean supportsParameter(MethodParameter methodParameter) {
-        return methodParameter.hasParameterAnnotation(LoginUserInfo.class) && methodParameter.getParameterType().equals(SysUser.class);
+        return methodParameter.hasParameterAnnotation(LoginUserInfo.class) && methodParameter.getParameterType().equals(SysUserDto.class);
     }
 
     /**
@@ -59,11 +59,11 @@ public class UserArgumentResolver implements HandlerMethodArgumentResolver {
             log.warn("resolveArgument error username is empty");
             return null;
         }
-        SysUser user;
+        SysUserDto user;
         if (isFull) {
             user = userService.selectByUsername(username);
         } else {
-            user = new SysUser();
+            user = new SysUserDto();
             user.setId(Long.valueOf(userId));
             user.setUserName(username);
         }

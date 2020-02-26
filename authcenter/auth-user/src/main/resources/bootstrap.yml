@@ -4,8 +4,3 @@ server:
 spring:
   application:
     name: user-center
-#  cloud:
-#    nacos:
-#      discovery:
-#        metadata:
-#          version: zlt
