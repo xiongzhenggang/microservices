@@ -29,7 +29,7 @@ public interface UserService {
      * @param username
      * @return
      */
-    @GetMapping(value = "/users-anon/login", params = "username")
+    @GetMapping(value = "/users/login", params = "username")
     AppLoginUser findByUsername(@RequestParam("username") String username);
 
     /**

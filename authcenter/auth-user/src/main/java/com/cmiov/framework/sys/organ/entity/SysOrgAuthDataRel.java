@@ -25,8 +25,8 @@ public class SysOrgAuthDataRel extends Model<SysOrgAuthDataRel> {
     private static final long serialVersionUID=1L;
         @TableId
         private Long id;
-        private Integer orgId;
-        private Integer authDataId;
+        private Long orgId;
+        private Long authDataId;
         private String createUser;
         private String updateUser;
         @TableField(fill = FieldFill.INSERT)

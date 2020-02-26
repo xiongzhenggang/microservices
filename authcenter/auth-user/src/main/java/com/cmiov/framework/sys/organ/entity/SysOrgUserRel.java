@@ -25,8 +25,8 @@ public class SysOrgUserRel extends Model<SysOrgUserRel> {
         private static final long serialVersionUID=1L;
         @TableId
         private Long id;
-        private Integer orgId;
-        private Integer userId;
+        private Long orgId;
+        private Long userId;
         private String createUser;
         private String updateUser;
         @TableField(fill = FieldFill.INSERT)

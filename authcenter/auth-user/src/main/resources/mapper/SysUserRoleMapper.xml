@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cmiov.framework.sys.user.mapper.SysUserRoleMapper">
 	<delete id="deleteUserRole">
-		delete from sys_role_user
+		delete from sys_user_role_rel
 		<where>
 			<if test="userId != null">
 				and user_id = #{userId}

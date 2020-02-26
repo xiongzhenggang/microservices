@@ -76,7 +76,7 @@ public abstract class DefaultPermissionServiceImpl {
             }
 
             //保存租户信息
-            String clientId = auth2Authentication.getOAuth2Request().getClientId();
+//            String clientId = auth2Authentication.getOAuth2Request().getClientId();
 //            TenantContextHolder.setTenant(clientId);
 
 

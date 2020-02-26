@@ -6,6 +6,7 @@ import com.cmiov.framework.sys.commonentity.SuperEntity;
 import com.cmiov.framework.sys.constant.CommonConstant;
 import com.cmiov.framework.sys.menu.entity.SysMenu;
 import com.cmiov.framework.sys.organ.entity.SysOrg;
+import com.cmiov.framework.sys.organ.entity.SysOrgUserRel;
 import com.cmiov.framework.sys.organ.mapper.SysOrgUserRelMapper;
 import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.role.mapper.SysRoleMenuMapper;
@@ -51,6 +52,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Resource
     private SysOrgUserRelMapper orgUserMapper;
+
     @Override
     public LoginAppUser findByUsername(String username) {
         SysUserDto sysUser = this.selectByUsername(username);
@@ -74,10 +76,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         if (sysUser != null) {
             LoginAppUser loginAppUser = new LoginAppUser();
             BeanUtils.copyProperties(sysUser, loginAppUser);
-            //设置组织机构
-            SysOrg org =  orgUserMapper.findOrganByUserId(sysUser.getId());
-            loginAppUser.setOrgId(org.getId());
-            loginAppUser.setOrgName(org.getName());
             List<SysRole> sysRoles = roleUserService.findRolesByUserId(sysUser.getId());
             // 设置角色
             loginAppUser.setRoles(sysRoles);
@@ -140,7 +138,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         SysUserDto user = null;
         if (users != null && !users.isEmpty()) {
             user = new SysUserDto();
+            //设置组织机构
             BeanUtils.copyProperties(users.get(0),user);
+            SysOrg org =  orgUserMapper.findOrganByUserId(user.getId());
+            user.setOrgId(org.getId());
+            user.setOrgName(org.getName());
         }
         return user;
     }
@@ -223,35 +225,41 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public Result saveOrUpdateUser(SysUser sysUser) {
-        if (sysUser.getId() == null) {
+    public Result saveOrUpdateUser(SysUser sysUser,SysUserDto currentUser) {
+        if (Objects.isNull(sysUser.getId())) {
             if (StringUtils.isBlank(sysUser.getType())) {
                 sysUser.setType(CommonConstant.DEF_USER_TYPE);
             }
+            sysUser.setCreateUser(currentUser.getUserName());
             sysUser.setPassword(passwordEncoder.encode(CommonConstant.DEF_USER_PASSWORD));
             sysUser.setEnabled(Boolean.TRUE);
-        }
-        super.save(sysUser);
-//        boolean result = super.saveOrUpdateIdempotency(sysUser, lock
-//                , LOCK_KEY_USERNAME+username, new QueryWrapper<SysUserDto>().eq("user_name", username)
-//                , username+"已存在");
-        //更新角色
-        if (StringUtils.isNotEmpty(sysUser.getRoleId())) {
-            roleUserService.deleteUserRole(sysUser.getId(), null);
-            List roleIds = Arrays.asList(sysUser.getRoleId().split(","));
-            if (!CollectionUtils.isEmpty(roleIds)) {
-                List<SysRoleUser> roleUsers = new ArrayList<>(roleIds.size());
-                roleIds.forEach(roleId -> roleUsers.add(new SysRoleUser(sysUser.getId(), Long.parseLong(roleId.toString()))));
-                roleUserService.saveBatch(roleUsers);
+        }else{
+            //更新角色
+            if (StringUtils.isNotEmpty(sysUser.getRoleId())) {
+                roleUserService.deleteUserRole(sysUser.getId(), null);
+                List roleIds = Arrays.asList(sysUser.getRoleId().split(","));
+                if (!CollectionUtils.isEmpty(roleIds)) {
+                    List<SysRoleUser> roleUsers = new ArrayList<>(roleIds.size());
+                    roleIds.forEach(roleId -> roleUsers.add(new SysRoleUser(sysUser.getId(), Long.parseLong(roleId.toString()))));
+                    roleUserService.saveBatch(roleUsers);
+                }
             }
         }
+        super.save(sysUser);
+        //保存用户组织机构关联表
+        SysOrgUserRel sour = new SysOrgUserRel();
+        sour.setOrgId(currentUser.getOrgId());
+        sour.setUserId(sysUser.getId());
+        orgUserMapper.insert(sour);
         return Result.succeed(sysUser, "操作成功");
     }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
     public boolean delUser(Long id) {
+        //删除关联的角色
         roleUserService.deleteUserRole(id, null);
+        //删除用户
         return baseMapper.deleteById(id) > 0;
     }
 

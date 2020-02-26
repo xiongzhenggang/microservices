@@ -5,6 +5,7 @@ import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.user.dto.LoginAppUser;
+import com.cmiov.framework.sys.user.dto.UserPasswordDto;
 import com.cmiov.framework.sys.user.entity.SysUser;
 import com.cmiov.framework.sys.user.dto.SysUserDto;
 import io.swagger.annotations.Api;
@@ -25,6 +26,7 @@ import java.util.Set;
  * 用户
  */
 @RestController
+@RequestMapping("/users")
 @Api(tags = "用户模块api")
 public interface SysUserApi {
 
@@ -35,13 +37,13 @@ public interface SysUserApi {
 //     * @return
 //     */
     @ApiOperation(value = "根据access_token当前登录用户")
-    @GetMapping("/users/current")
+    @GetMapping("/current")
     Result<LoginAppUser> getLoginAppUser(@LoginUserInfo(isFull = true) SysUserDto user);
 
     /**
      * 查询用户实体对象SysUser
      */
-    @GetMapping(value = "/users/name/{username}")
+    @GetMapping(value = "/name/{username}")
     @ApiOperation(value = "根据用户名查询用户实体")
     @Cacheable(value = "user", key = "#username")
     SysUserDto selectByUsername(@PathVariable String username) ;
@@ -49,7 +51,7 @@ public interface SysUserApi {
     /**
      * 查询用户登录对象LoginAppUser
      */
-    @GetMapping(value = "/users-anon/login", params = "username")
+    @GetMapping(value = "/login", params = "username")
     @ApiOperation(value = "根据用户名查询用户")
     LoginAppUser findByUsername(String username);
 
@@ -63,7 +65,7 @@ public interface SysUserApi {
 //     SysUserDto findByMobile(String mobile);
 
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/{id}")
      SysUser findUserById(@PathVariable Long id);
 
     /**
@@ -71,7 +73,7 @@ public interface SysUserApi {
      *
      * @param sysUser
      */
-    @PutMapping("/users")
+    @PutMapping("/")
     @CachePut(value = "user", key = "#sysUser.username", unless="#result == null")
     //@AuditLog(operation = "'更新用户:' + #sysUser")
      void updateSysUser(@RequestBody SysUser sysUser);
@@ -82,7 +84,7 @@ public interface SysUserApi {
      * @param id
      * @param roleIds
      */
-    @PostMapping("/users/{id}/roles")
+    @PostMapping("/{id}/roles")
      void setRoleToUser(@PathVariable Long id, @RequestBody Set<Long> roleIds) ;
 
     /**
@@ -91,7 +93,7 @@ public interface SysUserApi {
      * @param
      * @return
      */
-    @GetMapping("/users/{id}/roles")
+    @GetMapping("/{id}/roles")
     List<SysRole> findRolesByUserId(@PathVariable Long id);
 
     /**
@@ -105,7 +107,7 @@ public interface SysUserApi {
             @ApiImplicitParam(name = "page", value = "分页起始位置", required = true, dataType = "Integer"),
             @ApiImplicitParam(name = "limit", value = "分页结束位置", required = true, dataType = "Integer")
     })
-    @GetMapping("/users")
+    @GetMapping("/")
     public PageResult<SysUser> findUsers(@RequestParam Map<String, Object> params);
     /**
      * 修改用户状态
@@ -114,7 +116,7 @@ public interface SysUserApi {
      * @return
      */
     @ApiOperation(value = "修改用户状态")
-    @GetMapping("/users/updateEnabled")
+    @GetMapping("/updateEnabled")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id", value = "用户id", required = true, dataType = "Integer"),
             @ApiImplicitParam(name = "enabled", value = "是否启用", required = true, dataType = "Boolean")
@@ -126,22 +128,22 @@ public interface SysUserApi {
      *
      * @param id
      */
-    @PutMapping(value = "/users/{id}/password")
+    @PutMapping(value = "/{id}/password")
     //@AuditLog(operation = "'重置用户密码:' + #id")
      Result resetPassword(@PathVariable Long id);
 
     /**
      * 用户自己修改密码
      */
-    @PutMapping(value = "/users/password")
-     Result resetPassword(@RequestBody SysUser sysUser);
+    @PutMapping(value = "/resetpassword")
+     Result resetPassword(@LoginUserInfo SysUserDto user,@RequestBody UserPasswordDto dto);
 
     /**
      * 删除用户
      *
      * @param id
      */
-    @DeleteMapping(value = "/users/{id}")
+    @DeleteMapping(value = "/{id}")
     //@AuditLog(operation = "'删除用户:' + #id")
     public Result delete(@PathVariable Long id) ;
 
@@ -152,8 +154,8 @@ public interface SysUserApi {
      * @param sysUser
      * @return
      */
-    @CacheEvict(value = "user", key = "#sysUser.username")
-    @PostMapping("/users/saveOrUpdate")
-    public Result saveOrUpdate(@RequestBody SysUser sysUser);
+    @CacheEvict(value = "user", key = "#sysUser.userName")
+    @PostMapping("/")
+    Result saveOrUpdate(@RequestBody SysUser sysUser,@LoginUserInfo(isFull = true) SysUserDto sysUserDto);
 
 }

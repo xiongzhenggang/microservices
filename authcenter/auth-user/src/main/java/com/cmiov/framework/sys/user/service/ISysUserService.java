@@ -92,7 +92,7 @@ public interface ISysUserService extends IService<SysUser> {
 	Result updateEnabled(Map<String, Object> params);
 
 
-	Result saveOrUpdateUser(SysUser sysUser);
+	Result saveOrUpdateUser(SysUser sysUser,SysUserDto currentUser);
 
 	/**
 	 * 删除用户

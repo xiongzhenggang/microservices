@@ -25,8 +25,8 @@ public class SysOrgRoleRel extends Model<SysOrgRoleRel> {
     private static final long serialVersionUID=1L;
         @TableId
         private Long id;
-        private Integer orgId;
-        private Integer roleId;
+        private Long orgId;
+        private Long roleId;
         private String createUser;
         private String updateUser;
         @TableField(fill = FieldFill.INSERT)

@@ -5,6 +5,7 @@ import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.user.api.SysUserApi;
+import com.cmiov.framework.sys.user.dto.UserPasswordDto;
 import com.cmiov.framework.sys.user.entity.*;
 import com.cmiov.framework.sys.user.service.ISysUserService;
 import com.cmiov.framework.sys.user.dto.LoginAppUser;
@@ -152,11 +153,11 @@ public class SysUserController implements SysUserApi {
      * 用户自己修改密码
      */
     @Override
-    public Result resetPassword(@RequestBody SysUser sysUser) {
-        if (checkAdmin(sysUser.getId())) {
+    public Result resetPassword(@LoginUserInfo SysUserDto currentUser, UserPasswordDto dto) {
+        if (checkAdmin(currentUser.getId())) {
             return Result.failed(ADMIN_CHANGE_MSG);
         }
-        appUserService.updatePassword(sysUser.getId(), sysUser.getOldPassword(), sysUser.getNewPassword());
+        appUserService.updatePassword(currentUser.getId(), dto.getOldPassword(), dto.getNewPassword());
         return Result.succeed("重置成功");
     }
 
@@ -182,8 +183,8 @@ public class SysUserController implements SysUserApi {
      */
 //    @AuditLog(operation = "'新增或更新用户:' + #sysUser.username")
     @Override
-    public Result saveOrUpdate(@RequestBody SysUser sysUser) {
-        return appUserService.saveOrUpdateUser(sysUser);
+    public Result saveOrUpdate(@RequestBody SysUser sysUser,@LoginUserInfo(isFull = true) SysUserDto currentUser) {
+        return appUserService.saveOrUpdateUser(sysUser,currentUser);
     }
 
     /**
