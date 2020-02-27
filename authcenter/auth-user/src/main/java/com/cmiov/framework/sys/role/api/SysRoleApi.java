@@ -4,6 +4,8 @@ import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.role.entity.SysRole;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,7 @@ import java.util.Map;
  * 角色管理
  */
 @RestController
+@RequestMapping("/roles")
 @Api(tags = "角色模块api")
 public interface SysRoleApi {
 
@@ -25,7 +28,11 @@ public interface SysRoleApi {
      * @return
      */
     @ApiOperation(value = "后台管理查询角色")
-    @GetMapping("/roles")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page", value = "分页起始位置", required = true, dataType = "Integer"),
+            @ApiImplicitParam(name = "limit", value = "分页结束位置", required = true, dataType = "Integer")
+    })
+    @GetMapping("/")
     PageResult<SysRole> findRoles(@RequestParam Map<String, Object> params) ;
 
     /**
@@ -42,7 +49,7 @@ public interface SysRoleApi {
      * @param sysRole
      * @return
      */
-    @PostMapping("/roles/saveOrUpdate")
+    @PostMapping("/saveOrUpdate")
      Result saveOrUpdate(@RequestBody SysRole sysRole);
 
     /**
@@ -52,6 +59,6 @@ public interface SysRoleApi {
      * @param id
      */
     @ApiOperation(value = "后台管理删除角色")
-    @DeleteMapping("/roles/{id}")
-     Result deleteRole(@PathVariable Long id);
+    @DeleteMapping("/{id}")
+     Result deleteRole(@PathVariable(value="id") Long id);
 }

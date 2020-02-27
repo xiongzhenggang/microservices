@@ -8,7 +8,7 @@ import com.cmiov.framework.sys.menu.api.SysMenuApi;
 import com.cmiov.framework.sys.menu.entity.SysMenu;
 import com.cmiov.framework.sys.menu.service.ISysMenuService;
 import com.cmiov.framework.sys.role.entity.SysRole;
-import com.cmiov.framework.sys.user.entity.SysUser;
+import com.cmiov.framework.sys.user.dto.SysUserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -153,12 +153,12 @@ public class SysMenuController implements SysMenuApi {
      * @return
      */
     @Override
-    public List<SysMenu> findMyMenu(@LoginUserInfo SysUser user) {
+    public Result<List<SysMenu>> findMyMenu(@LoginUserInfo SysUserDto user) {
         List<SysRole> roles = user.getRoles();
         if (CollectionUtils.isEmpty(roles)) {
-            return Collections.emptyList();
+            return Result.succeed(Collections.emptyList()) ;
         }
         List<SysMenu> menus = menuService.findByRoleCodes(roles.parallelStream().map(SysRole::getCode).collect(Collectors.toSet()), CommonConstant.MENU_MENU);
-        return treeBuilder(menus);
+        return Result.succeed(treeBuilder(menus));
     }
 }

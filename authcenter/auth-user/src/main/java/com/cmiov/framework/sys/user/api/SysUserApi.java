@@ -46,7 +46,7 @@ public interface SysUserApi {
     @GetMapping(value = "/name/{username}")
     @ApiOperation(value = "根据用户名查询用户实体")
     @Cacheable(value = "user", key = "#username")
-    SysUserDto selectByUsername(@PathVariable String username) ;
+    SysUserDto selectByUsername(@PathVariable(value="username") String username) ;
 
     /**
      * 查询用户登录对象LoginAppUser
@@ -66,7 +66,7 @@ public interface SysUserApi {
 
 
     @GetMapping("/{id}")
-     SysUser findUserById(@PathVariable Long id);
+     Result<SysUser> findUserById(@PathVariable(value="id") Long id);
 
     /**
      * 管理后台修改用户
@@ -85,7 +85,7 @@ public interface SysUserApi {
      * @param roleIds
      */
     @PostMapping("/{id}/roles")
-     void setRoleToUser(@PathVariable Long id, @RequestBody Set<Long> roleIds) ;
+     void setRoleToUser(@PathVariable(value="id") Long id, @RequestBody Set<Long> roleIds) ;
 
     /**
      * 获取用户的角色
@@ -94,7 +94,7 @@ public interface SysUserApi {
      * @return
      */
     @GetMapping("/{id}/roles")
-    List<SysRole> findRolesByUserId(@PathVariable Long id);
+    List<SysRole> findRolesByUserId(@PathVariable(value="id") Long id);
 
     /**
      * 用户查询
@@ -107,8 +107,8 @@ public interface SysUserApi {
             @ApiImplicitParam(name = "page", value = "分页起始位置", required = true, dataType = "Integer"),
             @ApiImplicitParam(name = "limit", value = "分页结束位置", required = true, dataType = "Integer")
     })
-    @GetMapping("/")
-    public PageResult<SysUser> findUsers(@RequestParam Map<String, Object> params);
+    @GetMapping("")
+    PageResult<SysUser> findUsers(@RequestParam Map<String, Object> params);
     /**
      * 修改用户状态
      *
@@ -130,12 +130,12 @@ public interface SysUserApi {
      */
     @PutMapping(value = "/{id}/password")
     //@AuditLog(operation = "'重置用户密码:' + #id")
-     Result resetPassword(@PathVariable Long id);
+     Result resetPassword(@PathVariable(value="id") Long id);
 
     /**
      * 用户自己修改密码
      */
-    @PutMapping(value = "/resetpassword")
+    @PutMapping(value = "/reset/password")
      Result resetPassword(@LoginUserInfo SysUserDto user,@RequestBody UserPasswordDto dto);
 
     /**
@@ -145,7 +145,7 @@ public interface SysUserApi {
      */
     @DeleteMapping(value = "/{id}")
     //@AuditLog(operation = "'删除用户:' + #id")
-    public Result delete(@PathVariable Long id) ;
+    public Result delete(@PathVariable(value="id") Long id) ;
 
 
     /**

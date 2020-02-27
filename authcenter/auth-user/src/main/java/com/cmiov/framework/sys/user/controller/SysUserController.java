@@ -68,8 +68,11 @@ public class SysUserController implements SysUserApi {
 
 
     @Override
-    public SysUser findUserById(@PathVariable Long id) {
-        return appUserService.getById(id);
+    public  Result<SysUser> findUserById(@PathVariable Long id) {
+
+        SysUser sysUser =  appUserService.getById(id);
+        sysUser.setPassword(null);
+        return Result.succeed(sysUser);
     }
 
     /**

@@ -180,8 +180,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         }
         SysUser user = new SysUser();
         user.setId(id);
-        user.setPassword(passwordEncoder.encode(newPassword));
         baseMapper.updateById(user);
+        user.setPassword(passwordEncoder.encode(newPassword));
         return Result.succeed("修改成功");
     }
 
@@ -194,8 +194,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
             List<Long> userIds = list.stream().map(SysUser::getId).collect(Collectors.toList());
 
             List<SysRole> sysRoles = roleUserService.findRolesByUserIds(userIds);
-            list.forEach(u -> u.setRoles(sysRoles.stream().filter(r -> !ObjectUtils.notEqual(u.getId(), r.getUserId()))
-                    .collect(Collectors.toList())));
+            list.forEach(u ->{
+                u.setRoles(sysRoles.stream().filter(r -> !ObjectUtils.notEqual(u.getId(), r.getUserId()))
+                    .collect(Collectors.toList()));
+                    u.setPassword(null);
+            });
         }
         return PageResult.<SysUser>builder().data(list).code(0).count(total).build();
     }
@@ -251,7 +254,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         sour.setOrgId(currentUser.getOrgId());
         sour.setUserId(sysUser.getId());
         orgUserMapper.insert(sour);
-        return Result.succeed(sysUser, "操作成功");
+        return Result.succeed("操作成功");
     }
 
     @Transactional(rollbackFor = Exception.class)

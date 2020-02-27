@@ -33,4 +33,4 @@ cache-manager:
 
 logging:
   level:
-    com.cmiov.framework.sys.organ.mapper : debug
+    com.cmiov.framework.sys.user.mapper : debug

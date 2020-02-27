@@ -4,7 +4,7 @@ import com.cmiov.framework.sys.annotation.LoginUserInfo;
 import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.menu.entity.SysMenu;
-import com.cmiov.framework.sys.user.entity.SysUser;
+import com.cmiov.framework.sys.user.dto.SysUserDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cache.annotation.Cacheable;
@@ -72,5 +72,5 @@ public interface SysMenuApi {
      */
     @GetMapping("/current")
     @ApiOperation(value = "查询当前用户菜单")
-    public List<SysMenu> findMyMenu(@LoginUserInfo SysUser user);
+    Result<List<SysMenu>> findMyMenu(@LoginUserInfo SysUserDto user);
 }

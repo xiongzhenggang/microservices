@@ -38,7 +38,7 @@ public interface SysAuthDataApi {
      */
     @ApiOperation(value = "查询")
     @GetMapping("/{id}")
-     Result findUserById(@PathVariable Long id) ;
+     Result findUserById(@PathVariable(value="id") Long id) ;
 
     /**
      * 新增or更新
@@ -52,5 +52,5 @@ public interface SysAuthDataApi {
      */
     @ApiOperation(value = "删除")
     @DeleteMapping("/{id}")
-     Result delete(@PathVariable Long id) ;
+     Result delete(@PathVariable(value="id") Long id) ;
 }
