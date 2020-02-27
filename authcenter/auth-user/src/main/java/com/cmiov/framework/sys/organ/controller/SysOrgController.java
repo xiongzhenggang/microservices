@@ -3,6 +3,7 @@ package com.cmiov.framework.sys.organ.controller;
 import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.organ.api.SysOrgApi;
+import com.cmiov.framework.sys.organ.dto.AssignRoleDto;
 import com.cmiov.framework.sys.organ.entity.SysOrg;
 import com.cmiov.framework.sys.organ.service.ISysOrgService;
 import lombok.extern.slf4j.Slf4j;
@@ -27,10 +28,6 @@ public class SysOrgController implements SysOrgApi {
     /**
      * 列表
      */
-//    @ApiImplicitParams({
-//            @ApiImplicitParam(name = "page", value = "分页起始位置", required = true, dataType = "Integer"),
-//            @ApiImplicitParam(name = "limit", value = "分页结束位置", required = true, dataType = "Integer")
-//    })
     @Override
     public PageResult list(@RequestParam Map<String, Object> params) {
         return sysOrgService.findList(params);
@@ -54,6 +51,13 @@ public class SysOrgController implements SysOrgApi {
         return Result.succeed("保存成功");
     }
 
+    @Override
+    public Result assignRole(@RequestBody AssignRoleDto dto) {
+        if(null == dto.getOrgId()){
+            return Result.failed("组织机构为空！");
+        }
+        return sysOrgService.assignRole2Org(dto.getOrgId(),dto.getRoles());
+    }
     /**
      * 删除
      */

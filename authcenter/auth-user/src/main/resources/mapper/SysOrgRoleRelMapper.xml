@@ -5,4 +5,13 @@
     <select id="findList" resultType="com.cmiov.framework.sys.organ.entity.SysOrgRoleRel">
         select * from sys_org_role_rel t
     </select>
+
+    <!-- myself:批量插入 -->
+    <insert id="insertOrgRole" >
+        insert into sys_org_role_rel (org_id, role_id) values
+        <foreach collection="roleIds" item="item" index="index" separator=",">
+            (#{orgId},
+            #{item})
+        </foreach>
+    </insert>
 </mapper>

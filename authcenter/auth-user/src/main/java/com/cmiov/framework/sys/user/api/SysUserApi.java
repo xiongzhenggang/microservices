@@ -31,11 +31,6 @@ import java.util.Set;
 public interface SysUserApi {
 
 
-//    /**
-//     * 当前登录用户 LoginAppUser
-//     *
-//     * @return
-//     */
     @ApiOperation(value = "根据access_token当前登录用户")
     @GetMapping("/current")
     Result<LoginAppUser> getLoginAppUser(@LoginUserInfo(isFull = true) SysUserDto user);
@@ -57,7 +52,6 @@ public interface SysUserApi {
 
 //    /**
 //     * 通过手机号查询用户、角色信息
-//     *
 //     * @param mobile 手机号
 //     */
 //    @GetMapping(value = "/users-anon/mobile", params = "mobile")
@@ -78,14 +72,14 @@ public interface SysUserApi {
     //@AuditLog(operation = "'更新用户:' + #sysUser")
      void updateSysUser(@RequestBody SysUser sysUser);
 
+
     /**
      * 管理后台给用户分配角色
-     *
      * @param id
      * @param roleIds
      */
     @PostMapping("/{id}/roles")
-     void setRoleToUser(@PathVariable(value="id") Long id, @RequestBody Set<Long> roleIds) ;
+     Result setRoleToUser(@PathVariable(value="id") Long id, @RequestBody Set<Long> roleIds) ;
 
     /**
      * 获取用户的角色

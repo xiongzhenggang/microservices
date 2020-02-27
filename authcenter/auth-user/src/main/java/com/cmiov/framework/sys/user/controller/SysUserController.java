@@ -93,8 +93,9 @@ public class SysUserController implements SysUserApi {
      * @param roleIds
      */
     @Override
-    public void setRoleToUser(@PathVariable Long id, @RequestBody Set<Long> roleIds) {
+    public Result setRoleToUser(@PathVariable Long id, @RequestBody Set<Long> roleIds) {
         appUserService.setRoleToUser(id, roleIds);
+        return Result.succeed("操作成功");
     }
 
     /**

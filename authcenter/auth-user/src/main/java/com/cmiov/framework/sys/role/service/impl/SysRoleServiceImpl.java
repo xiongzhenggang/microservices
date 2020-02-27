@@ -1,5 +1,7 @@
 package com.cmiov.framework.sys.role.service.impl;
 
+import com.cmiov.framework.sys.constant.CommonConstant;
+import com.cmiov.framework.sys.organ.mapper.SysOrgRoleRelMapper;
 import com.cmiov.framework.sys.role.mapper.SysRoleMapper;
 import com.cmiov.framework.sys.role.mapper.SysRoleMenuMapper;
 import com.cmiov.framework.sys.role.service.ISysRoleService;
@@ -11,6 +13,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,12 +32,18 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     private SysUserRoleMapper userRoleMapper;
 
     @Resource
+    private SysOrgRoleRelMapper sysOrgRoleRelMapper;
+
+    @Resource
     private SysRoleMenuMapper roleMenuMapper;
 
 
     @Transactional(rollbackFor = Exception.class)
     @Override
     public void saveRole(SysRole sysRole) {
+        if(StringUtils.isEmpty(sysRole.getType())){
+            sysRole.setType(CommonConstant.DEF_USER_TYPE);
+        }
         super.save(sysRole);
 //        super.saveIdempotency(sysRole, lock
 //                , LOCK_KEY_ROLECODE+roleCode, new QueryWrapper<SysRole>().eq("code", roleCode), "角色code已存在");
@@ -69,7 +78,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
     }
 
     @Override
-    public List<SysRole> findAll() {
-        return baseMapper.findAll();
+    public List<SysRole> findOrgRoleAll(Long orgId) {
+        return baseMapper.findOrgRoles(orgId);
     }
 }

@@ -3,10 +3,12 @@ package com.cmiov.framework.sys.organ.mapper;
 import com.cmiov.framework.sys.organ.entity.SysOrgRoleRel;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 
@@ -22,4 +24,7 @@ public interface SysOrgRoleRelMapper extends BaseMapper<SysOrgRoleRel> {
      * @return
      */
     List<SysOrgRoleRel> findList(Page<SysOrgRoleRel> page, @Param("p") Map<String, Object> params);
+
+    //为赋予组织机构角色
+     void insertOrgRole(@Param(value = "orgId") Long orgId, @Param(value = "roleIds") Set<Long> roleIds);
 }

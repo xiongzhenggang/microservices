@@ -2,6 +2,7 @@ package com.cmiov.framework.sys.organ.api;
 
 import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
+import com.cmiov.framework.sys.organ.dto.AssignRoleDto;
 import com.cmiov.framework.sys.organ.entity.SysOrg;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -48,6 +49,12 @@ public interface SysOrgApi {
     @PostMapping
      Result save(@RequestBody SysOrg sysOrg) ;
 
+    /**
+     * 新增or更新
+     */
+    @ApiOperation(value = "分配角色")
+    @PostMapping("/assign/roles")
+    Result assignRole(@RequestBody AssignRoleDto dto) ;
     /**
      * 删除
      */

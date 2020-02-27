@@ -11,8 +11,7 @@
 			type,
 			create_time,
 			update_time,
-			tenant_id,
-			delete_flag
+			tenant_id
 	</sql>
 
 	<sql id="where">
@@ -34,9 +33,21 @@
 		order by t.create_time desc
 	</select>
 
-	<select id="findAll" resultType="com.cmiov.framework.sys.role.entity.SysRole">
-		select <include refid="Column_List"/>
-		from sys_role
-		order by create_time desc
+	<select id="findOrgRoles" resultType="com.cmiov.framework.sys.role.entity.SysRole">
+		select
+			sr.id,
+			sr.code,
+			sr.name,
+			sr.create_user,
+			sr.update_user,
+			sr.create_time,
+			sr.update_time
+		from
+			sys_role sr INNER JOIN sys_org_role_rel sorl on sr.id = sorl.role_id
+		where
+			sr.delete_flag = 0
+		AND
+		sorl.org_id = #{orgId}
+		order by sr.create_time desc
 	</select>
 </mapper>

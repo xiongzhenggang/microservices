@@ -34,5 +34,5 @@ public interface ISysRoleService extends IService<SysRole> {
 	 * 查询所有角色
 	 * @return
 	 */
-	List<SysRole> findAll();
+	List<SysRole> findOrgRoleAll(Long orgId);
 }

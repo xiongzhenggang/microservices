@@ -15,5 +15,10 @@ import java.util.Map;
 public interface SysRoleMapper extends BaseMapper<SysRole> {
 	List<SysRole> findList(Page<SysRole> page, @Param("r") Map<String, Object> params);
 
-	List<SysRole> findAll();
+	/**
+	 * 根据组织自购查询
+	 * @param orgId
+	 * @return
+	 */
+	List<SysRole> findOrgRoles(@Param("orgId") Long orgId);
 }

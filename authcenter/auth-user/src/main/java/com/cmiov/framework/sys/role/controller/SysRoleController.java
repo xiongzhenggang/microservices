@@ -1,10 +1,12 @@
 package com.cmiov.framework.sys.role.controller;
 
+import com.cmiov.framework.sys.annotation.LoginUserInfo;
 import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.role.api.SysRoleApi;
 import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.role.service.ISysRoleService;
+import com.cmiov.framework.sys.user.dto.SysUserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -37,8 +39,11 @@ public class SysRoleController implements SysRoleApi {
      * @return
      */
     @Override
-    public Result<List<SysRole>> findAll() {
-        List<SysRole> result = sysRoleService.findAll();
+    public Result<List<SysRole>> findCurrentOrgRoles(@LoginUserInfo(isFull = true) SysUserDto sysUserDto,@RequestParam(required = false) Long orgId) {
+        if(null == orgId){
+           orgId = sysUserDto.getOrgId();
+        }
+        List<SysRole> result = sysRoleService.findOrgRoleAll(orgId);
         return Result.succeed(result);
     }
 
