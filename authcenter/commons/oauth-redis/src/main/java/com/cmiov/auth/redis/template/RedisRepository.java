@@ -1,7 +1,6 @@
 package com.cmiov.auth.redis.template;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.data.redis.connection.RedisClusterNode;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisServerCommands;
@@ -12,6 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.util.CollectionUtils;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -243,7 +243,7 @@ public class RedisRepository {
             RedisSerializer<String> serializer = getRedisSerializer();
             Map<String, Object> maps = new HashMap<>(16);
             Set<String> keys = redisTemplate.keys(keyPatten + "*");
-            if (CollectionUtils.isNotEmpty(keys)) {
+            if(!CollectionUtils.isEmpty(keys)){
                 for (String key : keys) {
                     byte[] bKeys = serializer.serialize(key);
                     byte[] bValues = connection.get(bKeys);

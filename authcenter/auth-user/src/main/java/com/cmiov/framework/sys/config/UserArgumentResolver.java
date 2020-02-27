@@ -6,7 +6,7 @@ import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.user.service.ISysUserService;
 import com.cmiov.framework.sys.user.dto.SysUserDto;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -55,7 +55,7 @@ public class UserArgumentResolver implements HandlerMethodArgumentResolver {
         String userId = request.getHeader(CommonConstant.USER_ID_HEADER);
         String username = request.getHeader(CommonConstant.USER_HEADER);
         String roles = request.getHeader(CommonConstant.ROLE_HEADER);
-        if (StringUtils.isBlank(username)) {
+        if (StringUtils.isEmpty(username)) {
             log.warn("resolveArgument error username is empty");
             return null;
         }

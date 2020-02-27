@@ -2,27 +2,49 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>auth-center</artifactId>
-        <groupId>com.cmiov</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
 
+
+    <groupId>com.cmiov</groupId>
     <artifactId>auth-gateway</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>auth-gateway</name>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-boot-dependencies.version>2.2.2.RELEASE</spring-boot-dependencies.version>
+        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <hutool.version>5.1.2</hutool.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <oauth-common.version>1.0-SNAPSHOT</oauth-common.version>
+    </properties>
+
+
     <dependencies>
         <dependency>
-        <groupId>com.cmiov</groupId>
-        <artifactId>oauth-redis</artifactId>
-    </dependency>
+            <groupId>org.cmiov</groupId>
+            <artifactId>oauth-common</artifactId>
+            <version>${oauth-common.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.social</groupId>
-            <artifactId>spring-social-security</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
@@ -47,6 +69,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
         </dependency>
         <!-- swagger -->
         <dependency>
@@ -57,14 +80,23 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-oauth2-resource-server</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>javax.servlet</groupId>-->
-<!--            <artifactId>javax.servlet-api</artifactId>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
     </dependencies>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
     <build>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -78,6 +110,15 @@
                 </executions>
             </plugin>
         </plugins>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 
 </project>

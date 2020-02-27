@@ -5,7 +5,6 @@ import com.cmiov.framework.oauth.utils.AuthUtils;
 import com.cmiov.framework.oauth.utils.ResponseUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.collections.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.*;
@@ -23,6 +22,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
 
 /**
  * OAuth2相关操作
@@ -65,7 +65,7 @@ public class OAuth2Controller {
             ClientDetails clientDetails = getClient(clientId, clientSecret);
             //保存租户id
 //            TenantContextHolder.setTenant(clientId);
-            TokenRequest tokenRequest = new TokenRequest(MapUtils.EMPTY_MAP, clientId, clientDetails.getScope(), "customer");
+            TokenRequest tokenRequest = new TokenRequest(new HashMap(), clientId, clientDetails.getScope(), "customer");
             OAuth2Request oAuth2Request = tokenRequest.createOAuth2Request(clientDetails);
             Authentication authentication = authenticationManager.authenticate(token);
             SecurityContextHolder.getContext().setAuthentication(authentication);
