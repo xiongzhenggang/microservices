@@ -31,6 +31,8 @@ cache-manager:
 #  audit-log:
 #    enabled: true
 
+#logging:
+#  level:
+#    com.cmiov.framework.sys.user.mapper : debug
 logging:
-  level:
-    com.cmiov.framework.sys.user.mapper : debug
+  config: classpath:logback-spring.xml

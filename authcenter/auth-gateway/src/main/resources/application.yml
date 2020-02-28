@@ -72,3 +72,5 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 1000
+logging:
+  config: classpath:logback-spring.xml
