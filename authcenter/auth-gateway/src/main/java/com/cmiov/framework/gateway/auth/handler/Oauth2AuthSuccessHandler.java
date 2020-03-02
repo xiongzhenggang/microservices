@@ -2,7 +2,7 @@ package com.cmiov.framework.gateway.auth.handler;
 
 import com.cmiov.framework.gateway.constant.SecurityConstants;
 import com.cmiov.framework.gateway.utils.StringCollectionUtil;
-import com.cmiov.framework.logcenter.auth.redis.model.SysUser;
+import com.cmiov.framework.auth.redis.model.SysUser;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.server.WebFilterExchange;

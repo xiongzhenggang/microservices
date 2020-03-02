@@ -1,4 +1,4 @@
-package com.cmiov.framework.logcenter.auth.redis.template;
+package com.cmiov.framework.auth.redis.template;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.connection.RedisClusterNode;

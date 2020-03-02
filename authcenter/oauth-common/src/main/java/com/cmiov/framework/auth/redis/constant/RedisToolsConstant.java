@@ -1,4 +1,4 @@
-package com.cmiov.framework.logcenter.auth.redis.constant;
+package com.cmiov.framework.auth.redis.constant;
 
 /**
  * redis 工具常量

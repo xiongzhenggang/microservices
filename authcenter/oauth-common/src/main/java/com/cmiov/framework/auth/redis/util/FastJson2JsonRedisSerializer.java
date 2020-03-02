@@ -1,4 +1,4 @@
-package com.cmiov.framework.logcenter.auth.redis.util;
+package com.cmiov.framework.auth.redis.util;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.data.redis.serializer.RedisSerializer;

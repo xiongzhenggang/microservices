@@ -1,4 +1,4 @@
-package com.cmiov.framework.logcenter.auth.redis.model;
+package com.cmiov.framework.auth.redis.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
