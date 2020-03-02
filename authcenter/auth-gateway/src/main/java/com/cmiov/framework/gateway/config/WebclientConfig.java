@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class WebclientConfig {
     @Bean
-    @LoadBalanced//集群支持，负载均衡，必须要有本注解，不然请求会失败
+    @LoadBalanced
     public WebClient.Builder webClientBuilder(){
         return WebClient.builder();
     }

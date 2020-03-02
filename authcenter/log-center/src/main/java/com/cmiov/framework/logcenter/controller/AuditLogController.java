@@ -1,38 +1,45 @@
-//package com.cmiov.framework.logcenter.controller;
-//
-//import com.alibaba.fastjson.JSONObject;
-//import com.cmiov.common.model.PageResult;
-//import com.cmiov.framework.logcenter.dto.SearchDto;
-//import com.cmiov.search.client.service.IQueryService;
-//import com.cmiov.search.model.SearchDto;
-//import io.swagger.annotations.ApiImplicitParam;
-//import io.swagger.annotations.ApiImplicitParams;
-//import io.swagger.annotations.ApiOperation;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.RestController;
-//
-///**
-// * 审计日志
-// *
-// * @autho
-// * @date 2020/2/4
-// * <p>
-// */
-//@RestController
-//public class AuditLogController {
-//
-//    @ApiOperation(value = "审计日志全文搜索列表")
-//    @ApiImplicitParams({
-//            @ApiImplicitParam(name = "page", value = "分页起始位置", required = true, dataType = "Integer"),
-//            @ApiImplicitParam(name = "limit", value = "分页结束位置", required = true, dataType = "Integer"),
-//            @ApiImplicitParam(name = "queryStr", value = "搜索关键字", dataType = "String")
-//    })
-//    @GetMapping(value = "/auditLog")
-//    public PageResult<JSONObject> getPage(SearchDto searchDto) {
-////        searchDto.setIsHighlighter(true);
-////        searchDto.setSortCol("timestamp");
-//        return queryService.strQuery("audit-log-*", searchDto);
-//    }
-//
-//
-//}
+package com.cmiov.framework.logcenter.controller;
+
+import com.cmiov.framework.logcenter.api.AuditLogApi;
+import com.cmiov.framework.logcenter.dto.AuditLogDto;
+import com.cmiov.framework.logcenter.entity.LogInfo;
+import com.cmiov.framework.logcenter.model.PageResult;
+import com.cmiov.framework.logcenter.model.Result;
+import com.cmiov.framework.logcenter.service.ILogInfoService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+import java.util.Objects;
+
+/**
+ * 审计日志
+ *
+ * @autho
+ * @date 2020/3/2
+ * <p>
+ */
+@Slf4j
+@RestController
+public class AuditLogController implements AuditLogApi {
+
+    @Autowired
+    private ILogInfoService iLogInfoService;
+    @Override
+    public PageResult<LogInfo> list(Map<String, Object> params) {
+        return iLogInfoService.searchAuditLog(params);
+    }
+
+    @Override
+    public Result save(AuditLogDto dto) {
+        if(Objects.nonNull(dto)){
+            return Result.failed("参数为空！");
+        }
+        return iLogInfoService.saveAuditLog(dto);
+    }
+}
