@@ -1,7 +1,7 @@
 package com.cmiov.framework.sys.user.mapper;
 
-import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.user.entity.SysRoleUser;
+import com.cmiov.framework.sys.role.entity.SysRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

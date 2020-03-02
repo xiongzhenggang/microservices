@@ -3,7 +3,6 @@ package com.cmiov.framework.sys.organ.mapper;
 import com.cmiov.framework.sys.organ.entity.SysOrgRoleRel;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

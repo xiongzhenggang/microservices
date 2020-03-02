@@ -1,17 +1,18 @@
 package com.cmiov.framework.sys.user.service.impl;
 
-import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
-import com.cmiov.framework.sys.commonentity.SuperEntity;
 import com.cmiov.framework.sys.constant.CommonConstant;
+import com.cmiov.framework.sys.commonentity.PageResult;
+import com.cmiov.framework.sys.commonentity.SuperEntity;
 import com.cmiov.framework.sys.menu.entity.SysMenu;
 import com.cmiov.framework.sys.organ.entity.SysOrg;
 import com.cmiov.framework.sys.organ.entity.SysOrgUserRel;
 import com.cmiov.framework.sys.organ.mapper.SysOrgUserRelMapper;
 import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.role.mapper.SysRoleMenuMapper;
+import com.cmiov.framework.sys.user.entity.SysRoleUser;
+import com.cmiov.framework.sys.user.entity.SysUser;
 import com.cmiov.framework.sys.user.mapper.SysUserMapper;
-import com.cmiov.framework.sys.user.entity.*;
 import com.cmiov.framework.sys.user.service.ISysRoleUserService;
 import com.cmiov.framework.sys.user.service.ISysUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

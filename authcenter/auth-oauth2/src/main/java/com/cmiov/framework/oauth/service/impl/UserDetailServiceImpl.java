@@ -1,6 +1,6 @@
 package com.cmiov.framework.oauth.service.impl;
 
-import com.cmiov.auth.redis.model.AppLoginUser;
+import com.cmiov.framework.logcenter.auth.redis.model.AppLoginUser;
 import com.cmiov.framework.oauth.feign.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.DisabledException;

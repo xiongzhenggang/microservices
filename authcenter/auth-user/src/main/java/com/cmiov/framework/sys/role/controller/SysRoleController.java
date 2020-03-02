@@ -39,7 +39,7 @@ public class SysRoleController implements SysRoleApi {
      * @return
      */
     @Override
-    public Result<List<SysRole>> findCurrentOrgRoles(@LoginUserInfo(isFull = true) SysUserDto sysUserDto,@RequestParam(required = false) Long orgId) {
+    public Result<List<SysRole>> findCurrentOrgRoles(@LoginUserInfo(isFull = true) SysUserDto sysUserDto, @RequestParam(required = false) Long orgId) {
         if(null == orgId){
            orgId = sysUserDto.getOrgId();
         }

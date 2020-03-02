@@ -4,8 +4,6 @@ import com.cmiov.framework.gateway.constant.CommonConstant;
 import com.cmiov.framework.gateway.model.SysMenu;
 import com.cmiov.framework.gateway.properties.SecurityProperties;
 import com.cmiov.framework.gateway.utils.AuthenticationUtil;
-import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +13,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.util.AntPathMatcher;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -70,7 +69,7 @@ public abstract class DefaultPermissionServiceImpl {
             }
 
             List<SimpleGrantedAuthority> grantedAuthorityList = (List<SimpleGrantedAuthority>) authentication.getAuthorities();
-            if (CollectionUtil.isEmpty(grantedAuthorityList)) {
+            if (CollectionUtils.isEmpty(grantedAuthorityList)) {
                 log.warn("角色列表为空：{}", authentication.getPrincipal());
                 return false;
             }
@@ -84,7 +83,7 @@ public abstract class DefaultPermissionServiceImpl {
             List<SysMenu> menuList = findMenuByRoleCodes(roleCodes);
             for (SysMenu menu : menuList) {
                 if (StringUtils.isNotEmpty(menu.getUrl()) && antPathMatcher.match(menu.getUrl(), requestURI)) {
-                    if (StrUtil.isNotEmpty(menu.getMethod())) {
+                    if (StringUtils.isNotEmpty(menu.getMethod())) {
                         return requestMethod.equalsIgnoreCase(menu.getMethod());
                     } else {
                         return true;

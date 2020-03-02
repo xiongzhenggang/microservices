@@ -1,15 +1,14 @@
 package com.cmiov.framework.sys.role.api;
 
 import com.cmiov.framework.sys.annotation.LoginUserInfo;
-import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
+import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.user.dto.SysUserDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -43,7 +42,7 @@ public interface SysRoleApi {
      */
     @ApiOperation(value = "查询当前组织机构下得角色列表")
     @GetMapping("/org/roles")
-     Result<List<SysRole>> findCurrentOrgRoles(@LoginUserInfo(isFull = true)SysUserDto sysUserDto,@RequestParam(required = false) Long orgId);
+    Result<List<SysRole>> findCurrentOrgRoles(@LoginUserInfo(isFull = true) SysUserDto sysUserDto, @RequestParam(required = false) Long orgId);
 
     /**
      * 角色新增或者更新

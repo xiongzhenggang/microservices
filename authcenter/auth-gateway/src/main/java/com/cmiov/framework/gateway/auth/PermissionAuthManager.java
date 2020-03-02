@@ -1,7 +1,7 @@
 package com.cmiov.framework.gateway.auth;
 
-import com.cmiov.framework.gateway.feign.MenuService;
 import com.cmiov.framework.gateway.model.SysMenu;
+import com.cmiov.framework.gateway.feign.MenuService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.security.authorization.AuthorizationDecision;

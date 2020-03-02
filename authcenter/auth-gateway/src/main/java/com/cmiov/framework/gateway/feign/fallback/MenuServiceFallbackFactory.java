@@ -1,16 +1,17 @@
 package com.cmiov.framework.gateway.feign.fallback;
 
 import com.cmiov.framework.gateway.feign.MenuService;
-import cn.hutool.core.collection.CollectionUtil;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
 
 /**
  * menuService降级工场
  *
  * @author
- * @date 2019/1/18
+ * @date
  */
 @Slf4j
 @Component
@@ -19,7 +20,7 @@ public class MenuServiceFallbackFactory implements FallbackFactory<MenuService> 
     public MenuService create(Throwable throwable) {
         return roleIds -> {
             log.error("调用findByRoleCodes异常：{}", roleIds, throwable);
-            return CollectionUtil.newArrayList();
+            return new ArrayList<>();
         };
     }
 }

@@ -1,7 +1,7 @@
 package com.cmiov.framework.sys.user.api;
 
-import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
+import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.user.entity.SysAuthData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -31,14 +31,14 @@ public interface SysAuthDataApi {
             @ApiImplicitParam(name = "limit", value = "分页结束位置", required = true, dataType = "Integer")
     })
     @GetMapping
-     PageResult list(@RequestParam Map<String, Object> params);
+    PageResult list(@RequestParam Map<String, Object> params);
 
     /**
      * 查询
      */
     @ApiOperation(value = "查询")
     @GetMapping("/{id}")
-     Result findUserById(@PathVariable(value="id") Long id) ;
+    Result findUserById(@PathVariable(value="id") Long id) ;
 
     /**
      * 新增or更新

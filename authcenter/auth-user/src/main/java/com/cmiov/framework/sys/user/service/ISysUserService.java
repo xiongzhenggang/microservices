@@ -1,11 +1,11 @@
 package com.cmiov.framework.sys.user.service;
 
-import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
-import com.cmiov.framework.sys.role.entity.SysRole;
-import com.cmiov.framework.sys.user.entity.*;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.cmiov.framework.sys.user.dto.LoginAppUser;
+import com.cmiov.framework.sys.commonentity.PageResult;
+import com.cmiov.framework.sys.role.entity.SysRole;
+import com.cmiov.framework.sys.user.entity.SysUser;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.cmiov.framework.sys.user.dto.SysUserDto;
 
 import java.util.List;

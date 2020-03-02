@@ -1,12 +1,12 @@
 package com.cmiov.framework.oauth.resolver;
 
-import com.cmiov.auth.redis.model.SysRole;
-import com.cmiov.auth.redis.model.SysUser;
+import com.cmiov.framework.logcenter.auth.redis.model.SysRole;
+import com.cmiov.framework.logcenter.auth.redis.model.SysUser;
 import com.cmiov.framework.oauth.annotation.LoginUser;
 import com.cmiov.framework.oauth.constant.SecurityConstants;
 import com.cmiov.framework.oauth.feign.UserService;
-import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -61,7 +61,7 @@ public class TokenArgumentResolver implements HandlerMethodArgumentResolver {
         String userId = request.getHeader(SecurityConstants.USER_ID_HEADER);
         String username = request.getHeader(SecurityConstants.USER_HEADER);
         String roles = request.getHeader(SecurityConstants.ROLE_HEADER);
-        if (StrUtil.isBlank(username)) {
+        if (StringUtils.isBlank(username)) {
             log.warn("resolveArgument error username is empty");
             return null;
         }

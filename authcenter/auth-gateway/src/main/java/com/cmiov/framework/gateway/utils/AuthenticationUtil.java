@@ -1,6 +1,6 @@
 package com.cmiov.framework.gateway.utils;
 
-import com.cmiov.auth.redis.model.SysUser;
+import com.cmiov.framework.logcenter.auth.redis.model.SysUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 

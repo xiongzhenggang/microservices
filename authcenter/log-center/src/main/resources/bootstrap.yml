@@ -1,0 +1,6 @@
+server:
+  port: 8899
+
+spring:
+  application:
+    name: log-center

@@ -1,7 +1,7 @@
 package com.cmiov.framework.sys.menu.controller;
 
-import com.cmiov.framework.sys.annotation.LoginUserInfo;
 import com.cmiov.framework.sys.constant.CommonConstant;
+import com.cmiov.framework.sys.annotation.LoginUserInfo;
 import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.menu.api.SysMenuApi;

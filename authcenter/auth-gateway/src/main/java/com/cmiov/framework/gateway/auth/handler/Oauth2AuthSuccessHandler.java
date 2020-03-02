@@ -1,11 +1,10 @@
 package com.cmiov.framework.gateway.auth.handler;
 
-import com.cmiov.auth.redis.model.SysUser;
 import com.cmiov.framework.gateway.constant.SecurityConstants;
-import cn.hutool.core.collection.CollectionUtil;
+import com.cmiov.framework.gateway.utils.StringCollectionUtil;
+import com.cmiov.framework.logcenter.auth.redis.model.SysUser;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.web.server.WebFilterExchange;
 import org.springframework.security.web.server.authentication.ServerAuthenticationSuccessHandler;
 import org.springframework.util.LinkedMultiValueMap;
@@ -35,7 +34,9 @@ public class Oauth2AuthSuccessHandler implements ServerAuthenticationSuccessHand
 //        OAuth2Authentication oauth2Authentication = (OAuth2Authentication)authentication;
 //        String clientId = oauth2Authentication.getOAuth2Request().getClientId();
 //        headerValues.add(SecurityConstants.TENANT_HEADER, clientId);
-        headerValues.add(SecurityConstants.ROLE_HEADER, CollectionUtil.join(authentication.getAuthorities(), ","));
+
+        headerValues.add(SecurityConstants.ROLE_HEADER, StringCollectionUtil.join(authentication.getAuthorities(), ","));
+
         ServerWebExchange exchange = webFilterExchange.getExchange();
         ServerHttpRequest serverHttpRequest = exchange.getRequest().mutate()
                 .headers(h -> {

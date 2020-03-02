@@ -1,14 +1,13 @@
 package com.cmiov.framework.sys.organ.api;
 
-import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
+import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.organ.dto.AssignRoleDto;
 import com.cmiov.framework.sys.organ.entity.SysOrg;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;

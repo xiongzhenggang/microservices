@@ -1,15 +1,15 @@
 package com.cmiov.framework.oauth.service.impl;
 
-import com.cmiov.auth.redis.model.SysUser;
-import com.cmiov.auth.redis.template.RedisRepository;
+import com.cmiov.framework.logcenter.auth.redis.model.SysUser;
+import com.cmiov.framework.logcenter.auth.redis.template.RedisRepository;
+import com.cmiov.framework.oauth.exception.ValidateCodeException;
+import com.cmiov.framework.oauth.service.IValidateCodeService;
 import com.cmiov.framework.oauth.constant.SecurityConstants;
 import com.cmiov.framework.oauth.dto.Result;
-import com.cmiov.framework.oauth.exception.ValidateCodeException;
 import com.cmiov.framework.oauth.feign.UserService;
-import com.cmiov.framework.oauth.service.IValidateCodeService;
-import cn.hutool.core.util.RandomUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.math.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.ServletRequestBindingException;
@@ -65,7 +65,10 @@ public class ValidateCodeServiceImpl implements IValidateCodeService {
             return Result.failed("手机号不存在");
         }
 
-        String code = RandomUtil.randomNumbers(4);
+        String code = String.valueOf(RandomUtils.nextInt())
+                + String.valueOf(RandomUtils.nextInt())
+                + String.valueOf(RandomUtils.nextInt())
+                + String.valueOf(RandomUtils.nextInt());
         log.info("短信发送请求消息中心 -> 手机号:{} -> 验证码：{}", mobile, code);
         redisRepository.setExpire(buildKey(mobile), code, SecurityConstants.DEFAULT_IMAGE_EXPIRE);
         return Result.succeed("true");

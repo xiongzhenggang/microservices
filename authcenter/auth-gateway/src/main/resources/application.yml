@@ -61,6 +61,8 @@ security:
 application:
   user:
     service: user-center
+  log:
+    service: log-center
 gateway:
   #网关动态路由
   dynamicRoute:
