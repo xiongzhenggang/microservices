@@ -8,6 +8,8 @@ spring:
     consul:
       host: localhost
       port: 8500
+      discovery:
+        prefer-ip-address: true
   main:
     allow-bean-definition-overriding: true
   redis:

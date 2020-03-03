@@ -16,4 +16,10 @@ public class RedisToolsConstant {
      * Redis cluster
      */
     public final static int CLUSTER = 2 ;
+
+
+    //网关start   ----------
+    public final static String serialNumTempKey = "gateway:temp:serialNum:";
+    //网关end     ----------
+
 }
