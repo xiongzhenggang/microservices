@@ -104,4 +104,11 @@ public interface CommonConstant {
      * 注册中心元数据 版本号
      */
     String METADATA_VERSION = "version";
+
+
+    //序列号属性名称
+    String SYS_SERIAL_NUM = "sysSerialNum";
+    Integer NUM_5 = 5;
+
+
 }
