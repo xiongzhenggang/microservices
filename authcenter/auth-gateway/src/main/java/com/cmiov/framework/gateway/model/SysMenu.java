@@ -11,7 +11,6 @@ import java.util.Set;
  */
 @Data
 public class SysMenu  {
-	private static final long serialVersionUID = 749360940290141180L;
 	private Long id;
 	private Date createTime;
 	private Date updateTime;

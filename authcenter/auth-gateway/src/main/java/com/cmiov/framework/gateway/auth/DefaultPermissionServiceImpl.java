@@ -91,7 +91,6 @@ public abstract class DefaultPermissionServiceImpl {
                 }
             }
         }
-
         return false;
     }
 

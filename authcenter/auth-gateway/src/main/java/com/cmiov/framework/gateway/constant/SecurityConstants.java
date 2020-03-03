@@ -117,6 +117,8 @@ public interface SecurityConstants {
      * 缓存client的redis key，这里是hash结构存储
      */
     String CACHE_CLIENT_KEY = "oauth_client_details";
+
+    String GET_VALIDATE_CODE = "/validata/code";
     /**
      * OAUTH模式登录处理地址
      */

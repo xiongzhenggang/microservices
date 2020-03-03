@@ -24,9 +24,10 @@ import java.util.Set;
 @Service
 public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> implements ISysMenuService {
  	@Autowired
-//	@Qualifier("roleMenuService")
 	private ISysRoleMenuService roleMenuService;
 
+ 	@Autowired
+	private SysMenuMapper sysMenuMapper;
 	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public void setMenuToRole(Long roleId, Set<Long> menuIds) {
@@ -70,9 +71,10 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
      */
 	@Override
 	public List<SysMenu> findAll() {
-		return baseMapper.selectList(
-                new QueryWrapper<SysMenu>().orderByAsc("sort")
-        );
+		return sysMenuMapper.findAll();
+//		return baseMapper.selectList(
+//                new QueryWrapper<SysMenu>().orderByAsc("sort")
+//        );
 	}
 
     /**

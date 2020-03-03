@@ -1,11 +1,11 @@
 package com.cmiov.framework.gateway.feign.fallback;
 
 import com.cmiov.framework.gateway.feign.MenuService;
-import feign.hystrix.FallbackFactory;
+import com.cmiov.framework.gateway.model.SysMenu;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * menuService降级工场
@@ -14,13 +14,17 @@ import java.util.ArrayList;
  * @date
  */
 @Slf4j
-@Component
-public class MenuServiceFallbackFactory implements FallbackFactory<MenuService> {
+public class  MenuServiceFallbackFactory implements MenuService {
+
     @Override
-    public MenuService create(Throwable throwable) {
-        return roleIds -> {
-            log.error("调用findByRoleCodes异常：{}", roleIds, throwable);
-            return new ArrayList<>();
-        };
+    public List<SysMenu> findByRoleCodes(String roleCodes) {
+        log.error("调用findByRoleCodes异常：{}", roleCodes);
+        return new ArrayList<>();
+    }
+
+    @Override
+    public List<SysMenu> findAlls() {
+        log.error("调用findAlls异常");
+        return new ArrayList<>();
     }
 }

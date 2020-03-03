@@ -20,3 +20,6 @@ CREATE TABLE `log_info`  (
   `update_time` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB;
+
+
+

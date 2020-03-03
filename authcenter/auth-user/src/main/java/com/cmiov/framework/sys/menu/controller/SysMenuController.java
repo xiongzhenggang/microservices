@@ -119,9 +119,9 @@ public class SysMenuController implements SysMenuApi {
     }
 
     @Override
-    public PageResult<SysMenu> findAlls() {
+    public List<SysMenu> findAlls() {
         List<SysMenu> list = menuService.findAll();
-        return PageResult.<SysMenu>builder().data(list).code(0).count((long) list.size()).build();
+        return list;
     }
 
     @Override

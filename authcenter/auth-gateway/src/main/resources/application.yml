@@ -63,6 +63,10 @@ application:
     service: user-center
   log:
     service: log-center
+cache-manager:
+  configs:
+    - key: menus
+      second: 72000
 gateway:
   #网关动态路由
   dynamicRoute:

@@ -1,6 +1,7 @@
 package com.cmiov.framework.logcenter.api;
 
 import com.cmiov.framework.logcenter.dto.AuditLogDto;
+import com.cmiov.framework.logcenter.dto.SearchDto;
 import com.cmiov.framework.logcenter.entity.LogInfo;
 import com.cmiov.framework.logcenter.model.PageResult;
 import com.cmiov.framework.logcenter.model.Result;
@@ -34,4 +35,13 @@ public interface AuditLogApi {
     @ApiOperation(value = "保存")
     @PostMapping
     Result save(@RequestBody AuditLogDto dto) ;
+
+    @ApiOperation(value = "慢sql日志全文搜索列表")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page", value = "分页起始位置", required = true, dataType = "Integer"),
+            @ApiImplicitParam(name = "limit", value = "分页结束位置", required = true, dataType = "Integer"),
+            @ApiImplicitParam(name = "queryStr", value = "搜索关键字", dataType = "String")
+    })
+    @GetMapping(value = "/slowQueryLog")
+    PageResult getPage(SearchDto searchDto);
 }

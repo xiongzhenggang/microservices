@@ -35,7 +35,6 @@ public interface SysMenuApi {
      List<Map<String, Object>> findMenusByRoleId(@PathVariable Long roleId);
 
     @ApiOperation(value = "根据roleCodes获取对应的权限")
-    @SuppressWarnings("unchecked")
     @Cacheable(value = "menu", key ="#roleCodes")
     @GetMapping("/{roleCodes}")
      List<SysMenu> findMenuByRoles(@PathVariable String roleCodes) ;
@@ -49,11 +48,11 @@ public interface SysMenuApi {
 
     @ApiOperation(value = "查询所有菜单")
     @GetMapping("/findAlls")
-    PageResult<SysMenu> findAlls() ;
+    List<SysMenu>  findAlls() ;
 
     @ApiOperation(value = "获取菜单以及顶级菜单")
     @GetMapping("/findOnes")
-     PageResult<SysMenu> findOnes();
+    PageResult<SysMenu> findOnes();
 
     /**
      * 添加菜单 或者 更新

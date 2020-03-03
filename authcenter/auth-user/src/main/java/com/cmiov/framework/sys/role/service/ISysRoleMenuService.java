@@ -18,4 +18,5 @@ public interface ISysRoleMenuService extends IService<SysRoleMenu> {
 	List<SysMenu> findMenusByRoleIds(Set<Long> roleIds, String type);
 
 	List<SysMenu> findMenusByRoleCodes(Set<String> roleCodes, String type);
+
 }
