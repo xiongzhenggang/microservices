@@ -4,7 +4,7 @@
          <!--<property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>-->
         <springProperty scope="context" name="LOG_FILE" source="spring.application.name"/>
         <!--<springProperty scope="context" name="LOG_HOME" source="/home/logs"/>-->
-        <property name="LOG_HOME" value="/home/logs" />
+        <property name="LOG_HOME" value="../logs" />
          <!--1. 输出到控制台-->
          <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
              <encoder>
@@ -29,17 +29,29 @@
              </rollingPolicy>
          </appender>
 
+        <appender name="druidlog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_HOME}/druidlog/%d{yyyy-MM-dd}.log</FileNamePattern>
+                <MaxHistory>30</MaxHistory>
+            </rollingPolicy>
+            <encoder>
+                <pattern>%msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <logger name="druid" level="WARN">
+            <appender-ref ref="druidlog"/>
+        </logger>
          <logger name="noModule" level="info"/>
          <logger name="org.codehaus" level="info"/>
          <logger name="org.apache" level="info"/>
          <logger name="org.springframework" level="info"/>
-         <logger name="druid.sql" level="info"/>
-         <logger name="com.alibaba" level="debug">
-             <appender-ref ref="stdout"/>
-         </logger>
-         <logger name="com.springboot" level="debug"/>
-         <root level="info">
-             <appender-ref ref="stdout"/>
-             <appender-ref ref="R"/>
-         </root>
-     </configuration>
+<!--         <logger name="druid.sql" level="info"/>-->
+<!--         <logger name="com.alibaba" level="debug">-->
+<!--         <appender-ref ref="stdout"/></logger>-->
+     <logger name="com.springboot" level="debug"/>
+     <root level="info">
+         <appender-ref ref="stdout"/>
+         <appender-ref ref="R"/>
+     </root>
+ </configuration>

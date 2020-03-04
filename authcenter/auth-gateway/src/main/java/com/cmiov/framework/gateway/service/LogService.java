@@ -3,14 +3,18 @@ package com.cmiov.framework.gateway.service;
 import com.cmiov.framework.gateway.constant.SecurityConstants;
 import com.cmiov.framework.gateway.feign.MenuService;
 import com.cmiov.framework.gateway.model.AuditLogDto;
+import com.cmiov.framework.gateway.model.CodeEnum;
 import com.cmiov.framework.gateway.model.Result;
 import com.cmiov.framework.gateway.model.SysMenu;
 import com.cmiov.framework.gateway.utils.IPAddrUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.http.HttpException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -46,6 +50,7 @@ public class LogService {
         dto.setIpAddress(IPAddrUtil.getRemoteAddr(request));
         dto.setUserId(Integer.valueOf(headers.get(SecurityConstants.USER_ID_HEADER)));
         dto.setUserName(headers.get(SecurityConstants.USER_HEADER));
+        dto.setOrgId(Integer.valueOf(headers.get(SecurityConstants.ORG_ID_HEADER)));
         dto.setMethondType(request.getMethodValue());
         dto.setResourceUrl(url);
         compostMenuInfo(url,dto);
@@ -53,11 +58,17 @@ public class LogService {
                 .baseUrl("http://"+logService+"/auditlog")
                 .build()
                 .method(HttpMethod.POST)
+                .accept(MediaType.APPLICATION_JSON)
                 .body(Mono.just(dto),AuditLogDto.class)
                 .retrieve()//请求结果的方法
                 .bodyToMono(Result.class)
                 .doOnError(e -> {
-                    log.error(e.getMessage());
+                    log.error("保存用户审计日志异常：{}",e.getMessage());
+                })
+                .subscribe(result -> {
+                if(!result.getResp_code().equals(CodeEnum.SUCCESS.getCode())) {
+                    log.error("保存用户审计日志异常：{}",result.getResp_msg());
+                 }
                 });
     }
 

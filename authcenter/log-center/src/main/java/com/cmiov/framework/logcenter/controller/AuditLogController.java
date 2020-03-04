@@ -34,7 +34,7 @@ public class AuditLogController implements AuditLogApi {
 
     @Override
     public Result save(AuditLogDto dto) {
-        if(Objects.nonNull(dto)){
+        if(Objects.isNull(dto)){
             return Result.failed("参数为空！");
         }
         return iLogInfoService.saveAuditLog(dto);
