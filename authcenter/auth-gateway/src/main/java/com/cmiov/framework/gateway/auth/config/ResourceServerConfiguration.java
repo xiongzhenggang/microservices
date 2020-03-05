@@ -1,9 +1,9 @@
 package com.cmiov.framework.gateway.auth.config;
 
+import com.cmiov.framework.gateway.auth.handler.JsonAccessDeniedHandler;
 import com.cmiov.framework.gateway.auth.CustomAuthenticationManager;
 import com.cmiov.framework.gateway.auth.JsonAuthenticationEntryPoint;
 import com.cmiov.framework.gateway.auth.PermissionAuthManager;
-import com.cmiov.framework.gateway.auth.handler.JsonAccessDeniedHandler;
 import com.cmiov.framework.gateway.auth.handler.Oauth2AuthSuccessHandler;
 import com.cmiov.framework.gateway.properties.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;

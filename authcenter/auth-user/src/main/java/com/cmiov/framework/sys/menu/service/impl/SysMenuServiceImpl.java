@@ -1,8 +1,8 @@
 package com.cmiov.framework.sys.menu.service.impl;
 
-import com.cmiov.framework.sys.menu.service.ISysMenuService;
 import com.cmiov.framework.sys.role.entity.SysRoleMenu;
 import com.cmiov.framework.sys.role.service.ISysRoleMenuService;
+import com.cmiov.framework.sys.menu.service.ISysMenuService;
 import com.cmiov.framework.sys.menu.mapper.SysMenuMapper;
 import com.cmiov.framework.sys.menu.entity.SysMenu;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

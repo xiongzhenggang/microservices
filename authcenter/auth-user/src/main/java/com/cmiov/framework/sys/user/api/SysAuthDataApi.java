@@ -1,7 +1,7 @@
 package com.cmiov.framework.sys.user.api;
 
-import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.commonentity.PageResult;
+import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.user.entity.SysAuthData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;

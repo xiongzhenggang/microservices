@@ -1,9 +1,9 @@
 package com.cmiov.framework.sys.organ.service.impl;
 
+import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.organ.service.ISysOrgService;
 import com.cmiov.framework.sys.organ.mapper.SysOrgMapper;
-import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.organ.entity.SysOrg;
 import com.cmiov.framework.sys.organ.mapper.SysOrgRoleRelMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

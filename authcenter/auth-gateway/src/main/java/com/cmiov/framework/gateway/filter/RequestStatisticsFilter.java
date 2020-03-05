@@ -1,6 +1,5 @@
 package com.cmiov.framework.gateway.filter;
 
-import com.cmiov.framework.gateway.feign.MenuService;
 import com.cmiov.framework.gateway.service.LogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

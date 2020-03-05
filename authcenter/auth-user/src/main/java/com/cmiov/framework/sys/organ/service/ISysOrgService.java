@@ -1,7 +1,7 @@
 package com.cmiov.framework.sys.organ.service;
 
-import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.commonentity.PageResult;
+import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.organ.entity.SysOrg;
 import com.baomidou.mybatisplus.extension.service.IService;
 

@@ -1,7 +1,7 @@
 package com.cmiov.framework.oauth.resolver;
 
-import com.cmiov.framework.auth.redis.model.SysRole;
-import com.cmiov.framework.auth.redis.model.SysUser;
+import com.cmiov.framework.search.framework.auth.redis.model.SysRole;
+import com.cmiov.framework.search.framework.auth.redis.model.SysUser;
 import com.cmiov.framework.oauth.annotation.LoginUser;
 import com.cmiov.framework.oauth.constant.SecurityConstants;
 import com.cmiov.framework.oauth.feign.UserService;

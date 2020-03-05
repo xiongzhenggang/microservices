@@ -1,13 +1,13 @@
 package com.cmiov.framework.sys.user.api;
 
 import com.cmiov.framework.sys.annotation.LoginUserInfo;
+import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.user.dto.LoginAppUser;
-import com.cmiov.framework.sys.user.entity.SysUser;
-import com.cmiov.framework.sys.commonentity.PageResult;
-import com.cmiov.framework.sys.role.entity.SysRole;
-import com.cmiov.framework.sys.user.dto.UserPasswordDto;
 import com.cmiov.framework.sys.user.dto.SysUserDto;
+import com.cmiov.framework.sys.user.dto.UserPasswordDto;
+import com.cmiov.framework.sys.user.entity.SysUser;
+import com.cmiov.framework.sys.role.entity.SysRole;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

@@ -1,7 +1,7 @@
 package com.cmiov.framework.oauth.config;
 
-import com.cmiov.framework.oauth.feign.UserService;
 import com.cmiov.framework.oauth.resolver.TokenArgumentResolver;
+import com.cmiov.framework.oauth.feign.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;

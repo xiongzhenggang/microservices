@@ -5,7 +5,6 @@ import com.cmiov.framework.logcenter.entity.LogInfo;
 import com.cmiov.framework.logcenter.model.PageResult;
 import com.cmiov.framework.logcenter.model.Result;
 
-import java.util.List;
 import java.util.Map;
 
 /**

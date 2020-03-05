@@ -1,8 +1,8 @@
 package com.cmiov.framework.sys.user.service.impl;
 
+import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.user.service.ISysAuthDataService;
 import com.cmiov.framework.sys.user.mapper.SysAuthDataMapper;
-import com.cmiov.framework.sys.commonentity.PageResult;
 import com.cmiov.framework.sys.user.entity.SysAuthData;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

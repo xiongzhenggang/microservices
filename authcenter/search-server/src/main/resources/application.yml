@@ -1,0 +1,18 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      address: 127.0.0.1
+      port: 9300
+      repositories:
+        enabled: true
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+indices:
+  show: mysql-slowlog-*,  audit-log-*
+logging:
+  config: classpath:logback-spring.xml

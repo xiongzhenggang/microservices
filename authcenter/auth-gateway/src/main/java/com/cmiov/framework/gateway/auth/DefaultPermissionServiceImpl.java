@@ -1,7 +1,7 @@
 package com.cmiov.framework.gateway.auth;
 
-import com.cmiov.framework.gateway.constant.CommonConstant;
 import com.cmiov.framework.gateway.model.SysMenu;
+import com.cmiov.framework.gateway.constant.CommonConstant;
 import com.cmiov.framework.gateway.properties.SecurityProperties;
 import com.cmiov.framework.gateway.utils.AuthenticationUtil;
 import lombok.extern.slf4j.Slf4j;

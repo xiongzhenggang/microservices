@@ -1,8 +1,8 @@
 package com.cmiov.framework.sys.user.controller;
 
 import com.cmiov.framework.sys.annotation.LoginUserInfo;
-import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.commonentity.PageResult;
+import com.cmiov.framework.sys.commonentity.Result;
 import com.cmiov.framework.sys.role.entity.SysRole;
 import com.cmiov.framework.sys.user.api.SysUserApi;
 import com.cmiov.framework.sys.user.dto.UserPasswordDto;

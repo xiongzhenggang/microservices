@@ -5,8 +5,9 @@ import java.util.Map;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.cmiov.framework.logcenter.entity.LogInfo;
 import org.apache.ibatis.annotations.Param;
-import  com.cmiov.framework.logcenter.entity.LogInfo;
+
 /**
 *  @author author
 */

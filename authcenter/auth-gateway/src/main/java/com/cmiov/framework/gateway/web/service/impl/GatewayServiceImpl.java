@@ -1,7 +1,7 @@
 package com.cmiov.framework.gateway.web.service.impl;
 
-import com.cmiov.framework.auth.redis.constant.RedisToolsConstant;
 import com.cmiov.framework.gateway.constant.CommonConstant;
+import com.cmiov.framework.search.framework.auth.redis.constant.RedisToolsConstant;
 import com.cmiov.framework.gateway.web.service.GatewayService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class GatewayServiceImpl implements GatewayService {
         String uuid = UUID.randomUUID().toString();
         String redisKey = RedisToolsConstant.serialNumTempKey+uuid;
         redisTemplate.opsForValue().set(redisKey,uuid);
-        redisTemplate.expire(redisKey,CommonConstant.NUM_5, TimeUnit.MINUTES);
+        redisTemplate.expire(redisKey, CommonConstant.NUM_5, TimeUnit.MINUTES);
         return uuid;
     }
 }

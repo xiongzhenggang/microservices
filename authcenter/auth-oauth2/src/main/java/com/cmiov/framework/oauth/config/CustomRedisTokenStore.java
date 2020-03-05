@@ -1,7 +1,7 @@
 package com.cmiov.framework.oauth.config;
 
-import com.cmiov.framework.oauth.properties.AuthProperties;
 import com.cmiov.framework.oauth.constant.SecurityConstants;
+import com.cmiov.framework.oauth.properties.AuthProperties;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;

@@ -1,8 +1,8 @@
 package com.cmiov.framework.oauth.feign;
 
-import com.cmiov.framework.auth.redis.model.AppLoginUser;
-import com.cmiov.framework.auth.redis.model.SysUser;
 import com.cmiov.framework.oauth.feign.fallback.UserServiceFallbackFactory;
+import com.cmiov.framework.search.framework.auth.redis.model.AppLoginUser;
+import com.cmiov.framework.search.framework.auth.redis.model.SysUser;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
