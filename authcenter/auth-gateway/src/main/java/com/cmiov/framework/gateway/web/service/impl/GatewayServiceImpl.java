@@ -1,7 +1,7 @@
 package com.cmiov.framework.gateway.web.service.impl;
 
 import com.cmiov.framework.gateway.constant.CommonConstant;
-import com.cmiov.framework.search.framework.auth.redis.constant.RedisToolsConstant;
+import com.cmiov.framework.auth.redis.constant.RedisToolsConstant;
 import com.cmiov.framework.gateway.web.service.GatewayService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

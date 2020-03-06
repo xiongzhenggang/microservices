@@ -1,7 +1,7 @@
 package com.cmiov.framework.oauth.feign.fallback;
 
-import com.cmiov.framework.search.framework.auth.redis.model.AppLoginUser;
-import com.cmiov.framework.search.framework.auth.redis.model.SysUser;
+import com.cmiov.framework.auth.redis.model.AppLoginUser;
+import com.cmiov.framework.auth.redis.model.SysUser;
 import com.cmiov.framework.oauth.feign.UserService;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;

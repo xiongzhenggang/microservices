@@ -18,9 +18,9 @@
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <oauth-common.version>1.0-SNAPSHOT</oauth-common.version>
         <easyCaptcha.version>1.6.2</easyCaptcha.version>
-        <commons-io.version>2.6</commons-io.version>
-        <mybatis-plus-boot-starter.version>3.3.1</mybatis-plus-boot-starter.version>
         <druid-starter>1.1.21</druid-starter>
+        <mybatis-plus-boot-starter.version>3.3.1</mybatis-plus-boot-starter.version>
+        <commons-io.version>2.6</commons-io.version>
     </properties>
 
 
@@ -33,6 +33,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus-boot-starter.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -64,6 +69,15 @@
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid-starter}</version>
         </dependency>
     </dependencies>
 

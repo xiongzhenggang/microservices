@@ -68,8 +68,10 @@ application:
     service: log-center
 cache-manager:
   configs:
-    - key: menus
-      second: 72000
+    - key: all_menu
+      second: 7200
+    - key: role_menu
+      second: 3600
 gateway:
   #网关动态路由
   dynamicRoute:

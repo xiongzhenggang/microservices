@@ -1,7 +1,7 @@
 package com.cmiov.framework.gateway.filter;
 
 import com.cmiov.framework.gateway.constant.CommonConstant;
-import com.cmiov.framework.search.framework.auth.redis.constant.RedisToolsConstant;
+import com.cmiov.framework.auth.redis.constant.RedisToolsConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;

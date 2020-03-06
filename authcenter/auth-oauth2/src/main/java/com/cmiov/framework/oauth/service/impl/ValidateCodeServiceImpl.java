@@ -1,7 +1,7 @@
 package com.cmiov.framework.oauth.service.impl;
 
-import com.cmiov.framework.search.framework.auth.redis.model.SysUser;
-import com.cmiov.framework.search.framework.auth.redis.template.RedisRepository;
+import com.cmiov.framework.auth.redis.model.SysUser;
+import com.cmiov.framework.auth.redis.template.RedisRepository;
 import com.cmiov.framework.oauth.exception.ValidateCodeException;
 import com.cmiov.framework.oauth.service.IValidateCodeService;
 import com.cmiov.framework.oauth.constant.SecurityConstants;

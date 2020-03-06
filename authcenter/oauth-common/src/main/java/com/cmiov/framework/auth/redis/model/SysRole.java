@@ -1,4 +1,4 @@
-package com.cmiov.framework.search.framework.auth.redis.model;
+package com.cmiov.framework.auth.redis.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,4 +1,4 @@
-package com.cmiov.framework.search.framework.auth.redis.properties;
+package com.cmiov.framework.auth.redis.properties;
 
 import lombok.Getter;
 import lombok.Setter;

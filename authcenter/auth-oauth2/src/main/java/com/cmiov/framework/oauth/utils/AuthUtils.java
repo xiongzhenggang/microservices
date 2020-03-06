@@ -1,7 +1,7 @@
 package com.cmiov.framework.oauth.utils;
 
 import com.cmiov.framework.oauth.constant.SecurityConstants;
-import com.cmiov.framework.search.framework.auth.redis.model.SysUser;
+import com.cmiov.framework.auth.redis.model.SysUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;

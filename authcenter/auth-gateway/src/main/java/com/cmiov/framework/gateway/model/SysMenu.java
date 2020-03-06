@@ -2,6 +2,7 @@ package com.cmiov.framework.gateway.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -10,7 +11,8 @@ import java.util.Set;
  * @autho
  */
 @Data
-public class SysMenu  {
+public class SysMenu implements Serializable {
+	private static final long serialVersionUID = 5412875958701291412L;
 	private Long id;
 	private Date createTime;
 	private Date updateTime;

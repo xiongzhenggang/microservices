@@ -22,17 +22,18 @@
         <swagger.version>2.9.2</swagger.version>
         <mybatis-plus-boot-starter.version>3.3.1</mybatis-plus-boot-starter.version>
         <druid-starter>1.1.21</druid-starter>
+        <oauth-common.version>1.0-SNAPSHOT</oauth-common.version>
         <spring-social-security.version>1.1.6.RELEASE</spring-social-security.version>
         <commons-collections4.version>4.1</commons-collections4.version>
     </properties>
 
     <dependencies>
         <!-- 公共实体类模块 -->
-<!--        <dependency>-->
-<!--            <groupId>javax.servlet</groupId>-->
-<!--            <artifactId>javax.servlet-api</artifactId>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.cmiov</groupId>
+            <artifactId>oauth-common</artifactId>
+            <version>${oauth-common.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

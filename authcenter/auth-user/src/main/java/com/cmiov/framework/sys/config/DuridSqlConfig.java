@@ -31,7 +31,6 @@ public class DuridSqlConfig {
         filter.setStatementPrepareAfterLogEnabled(false);
         return  filter;
     }
-
     @Primary
     @Bean
     @ConfigurationProperties("spring.datasource.druid")

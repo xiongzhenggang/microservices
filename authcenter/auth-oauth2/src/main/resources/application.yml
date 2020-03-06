@@ -1,4 +1,11 @@
 spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://118.24.61.199:3306/oauth-center?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: xzg
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
   cloud:
     consul:
       host: localhost

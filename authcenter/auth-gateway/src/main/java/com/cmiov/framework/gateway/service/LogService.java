@@ -70,7 +70,7 @@ public class LogService {
                 });
     }
 
-    @Cacheable(value = "menus", key ="allmenus")
+
     public List<SysMenu> getAllMenus(){
         return menuService.findAlls();
     }
