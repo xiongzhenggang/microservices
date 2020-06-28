@@ -96,10 +96,10 @@
         <discardingThreshold>0</discardingThreshold>
         <appender-ref ref="audit_log"/>
     </appender>
-    <logger name="com.cmiov.log.monitor" level="debug" addtivity="false">
+    <logger name="com.xzg.log.monitor" level="debug" addtivity="false">
         <appender-ref ref="point_log_async" />
     </logger>
-    <logger name="com.cmiov.log.service.impl.LoggerAuditServiceImpl" level="debug" addtivity="false">
+    <logger name="com.xzg.log.service.impl.LoggerAuditServiceImpl" level="debug" addtivity="false">
         <appender-ref ref="audit_log_async" />
     </logger>
 

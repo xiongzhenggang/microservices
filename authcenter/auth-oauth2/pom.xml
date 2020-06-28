@@ -9,7 +9,7 @@
         <version>2.2.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.cmiov</groupId>
+    <groupId>com.xzg</groupId>
     <artifactId>auth-oauth2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>auth-oauth2</name>
@@ -26,7 +26,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.cmiov</groupId>
+            <groupId>org.xzg</groupId>
             <artifactId>oauth-common</artifactId>
             <version>${oauth-common.version}</version>
         </dependency>

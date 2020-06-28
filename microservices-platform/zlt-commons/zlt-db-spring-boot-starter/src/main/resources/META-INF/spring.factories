@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.cmiov.db.config.TenantAutoConfigure
+com.xzg.db.config.TenantAutoConfigure

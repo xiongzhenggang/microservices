@@ -19,7 +19,7 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.cmiov.framework.sys
+  typeAliasesPackage: com.xzg.framework.sys
   global-config:
     db-config:
       id-type: auto
@@ -36,6 +36,6 @@ cache-manager:
 
 #logging:
 #  level:
-#    com.cmiov.framework.sys.user.mapper : debug
+#    com.xzg.framework.sys.user.mapper : debug
 logging:
   config: classpath:logback-spring.xml

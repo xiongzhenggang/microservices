@@ -11,7 +11,7 @@
     </parent>
 
 
-    <groupId>com.cmiov</groupId>
+    <groupId>com.xzg</groupId>
     <artifactId>auth-user</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>auth-user</name>
@@ -30,7 +30,7 @@
     <dependencies>
         <!-- 公共实体类模块 -->
         <dependency>
-            <groupId>org.cmiov</groupId>
+            <groupId>org.xzg</groupId>
             <artifactId>oauth-common</artifactId>
             <version>${oauth-common.version}</version>
         </dependency>

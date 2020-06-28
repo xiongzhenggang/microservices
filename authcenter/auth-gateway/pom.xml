@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>com.cmiov</groupId>
+    <groupId>com.xzg</groupId>
     <artifactId>auth-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>auth-gateway</name>
@@ -28,7 +28,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.cmiov</groupId>
+            <groupId>org.xzg</groupId>
             <artifactId>oauth-common</artifactId>
             <version>${oauth-common.version}</version>
         </dependency>

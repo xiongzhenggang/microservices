@@ -8,7 +8,7 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.cmiov.oauth.model
+  typeAliasesPackage: com.xzg.oauth.model
   global-config:
     db-config:
       id-type: auto
@@ -23,7 +23,7 @@ zlt:
     title: 认证中心
     description: 认证中心接口文档
     version: 1.0
-    base-package: com.cmiov.oauth.controller
+    base-package: com.xzg.oauth.controller
   security:
     code:
       # 忽略验证码的应用编号

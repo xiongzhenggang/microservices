@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.cmiov.framework.sys.organ.mapper.SysOrgUserRelMapper">
-    <select id="findList" resultType="com.cmiov.framework.sys.organ.entity.SysOrgUserRel">
+<mapper namespace="com.xzg.framework.sys.organ.mapper.SysOrgUserRelMapper">
+    <select id="findList" resultType="com.xzg.framework.sys.organ.entity.SysOrgUserRel">
         select * from sys_org_user_rel t
     </select>
-    <select id="findOrganByUserId" resultType="com.cmiov.framework.sys.organ.entity.SysOrg">
+    <select id="findOrganByUserId" resultType="com.xzg.framework.sys.organ.entity.SysOrg">
         select o.* from sys_org o
         inner join sys_org_user_rel ou on o.id = ou.org_id and ou.user_id = #{userId}
     </select>
