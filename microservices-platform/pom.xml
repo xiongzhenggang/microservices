@@ -33,7 +33,7 @@
         <poi.version>4.1.1</poi.version>
         <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
         <velocity.version>1.7</velocity.version>
-        <commons-configuration2.version>2.6</commons-configuration2.version>
+        <commons-configuration2.version>2.7</commons-configuration2.version>
         <userAgent.version>1.21</userAgent.version>
         <transmittable.version>2.11.4</transmittable.version>
         <lettuce.version>5.2.1.RELEASE</lettuce.version>
