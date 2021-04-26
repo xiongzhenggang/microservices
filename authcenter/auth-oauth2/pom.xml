@@ -20,7 +20,7 @@
         <easyCaptcha.version>1.6.2</easyCaptcha.version>
         <druid-starter>1.1.21</druid-starter>
         <mybatis-plus-boot-starter.version>3.3.1</mybatis-plus-boot-starter.version>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
     </properties>
 
 
