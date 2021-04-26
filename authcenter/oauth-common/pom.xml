@@ -17,7 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <fastjson.version>1.2.62</fastjson.version>
         <spring-social-security.version>1.1.6.RELEASE</spring-social-security.version>
     </properties>
